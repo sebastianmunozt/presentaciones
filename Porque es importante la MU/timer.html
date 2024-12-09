@@ -1,0 +1,56 @@
+<style>
+.countdown {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 3rem;
+  line-height: 1;
+  border: 3px solid #ddd;
+  border-radius: 15px;
+  padding: 10px 15px;
+  text-align: center;
+  z-index: 100;
+  background-color: #43AC6A;
+  color: #FFFFFF;
+}
+</style>
+
+<div class="countdown" id="timer_a36e000c" data-update-every="1" tabindex="0">
+  <code class="countdown-time">
+    <span class="countdown-digits minutes">15</span>
+    <span class="countdown-digits colon">:</span>
+    <span class="countdown-digits seconds">00</span>
+  </code>
+</div>
+
+<script>
+(function () {
+  const el = document.querySelector('.countdown');
+  let duration = 15 * 60; // 15 minutos en segundos
+  const display = {
+    minutes: el.querySelector('.minutes'),
+    seconds: el.querySelector('.seconds'),
+  };
+
+  function updateDisplay() {
+    const mins = Math.floor(duration / 60);
+    const secs = duration % 60;
+    display.minutes.textContent = String(mins).padStart(2, '0');
+    display.seconds.textContent = String(secs).padStart(2, '0');
+  }
+
+  function startTimer() {
+    const timer = setInterval(() => {
+      if (duration <= 0) {
+        clearInterval(timer);
+        return;
+      }
+      duration--;
+      updateDisplay();
+    }, 1000);
+  }
+
+  updateDisplay();
+  startTimer();
+})();
+</script>

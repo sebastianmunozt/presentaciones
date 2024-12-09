@@ -1,0 +1,337 @@
+
+---
+title: " Autenticidad y presentación personal en el rap"
+author: "Seminario MU CMUS"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+      font-family: "Outfit, Arial, sans-serif"
+---
+
+
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+
+#install.packages("pacman")
+pacman::p_load(xaringan,xaringanthemer,tidyverse, gt,kableExtra, xaringanExtra )
+
+
+style_duo_accent_inverse(
+  primary_color = "#FFFFFF",
+  secondary_color = "#808080",
+  inverse_header_color = "#A8FBC8"
+)
+
+
+```
+
+
+
+```{r xaringan-animate-css, echo=FALSE}
+xaringanExtra::use_animate_css()
+xaringanExtra::use_tachyons()
+xaringanExtra::use_share_again()
+
+```
+
+
+class: slideInRight, fadeOutLeft, middle
+
+# .red[Legitimidad] vs. .green[Autenticidad]
+
+.pull-left[
+### Legitimidad
+- **Categoría etic**: Construida para análisis sociológicos.
+- Reconocimiento social (Weber, 1959).
+- **Procesos clave**:
+  - Validación institucional: Confianza colectiva en el orden.
+  - Eclecticismo ilustrado: Capacidad de apreciar diversas formas culturales (Peterson, 1992).
+  - Distinción social: Basada en el capital cultural y estético (Bourdieu, 1979).
+- Basada en normas y valores de la cultura dominante (Guillard & Sonnette, 2020).
+]
+
+.pull-right[
+### Autenticidad
+- **Categoría emic**: Portada por los actores.
+- Proceso de autentificación (Moore, 2002):
+  - Valor atribuido a objetos/personas en contextos específicos.
+  - "El arte de ser sin artificios" (Peterson, 1997).
+- **Funciones clave**:
+  - Reforzar credibilidad en productos y personas.
+  - Anclaje en convenciones de mundos artísticos populares.
+- Construcción social y contextual (Guillard & Sonnette, 2020).
+]
+
+
+**Referencia:**  
+Guillard, S., & Sonnette, M. (2020). Légitimité et authenticité du hip-hop : Rapports sociaux, espaces et temporalités de musiques en recomposition. *Volume! La revue des musiques populaires, 17*(2), 7–23.
+
+
+
+---
+class: slideInRight, fadeOutLeft, middle
+
+# Paradójica Ilegitimidad
+
+.pull-left[
+### Contradicción central en el .red[Hip Hop]
+1. **Popularidad**:
+   - El hip-hop entra a formar parte de las producciones dominantes de la música popular.
+   - Se convierte en un género influyente dentro de las industrias culturales.
+2. **Ilegitimidad**:
+   - A pesar de su éxito, es criticado por las élites políticas.
+   - La ilegitimidad se percibe como una resistencia a su institucionalización.
+]
+
+.pull-right[
+### Contraste: .green[Jazz] y su legitimación
+1. **Progresión hacia legitimidad**:
+   - De música popular marginada a patrimonio cultural.
+   - Integración en instituciones culturales dominantes, como universidades y museos (Baumann, 2007).
+2. **Procesos clave**:
+   - **Estética**: Revalorización por innovación y calidad artística.
+   - **Patrimonialización**: Reconocimiento del jazz como símbolo histórico y cultural.
+3. **Diferencia clave**:
+   - Mientras el jazz alcanzó legitimidad cultural, el hip-hop sigue enfrentando tensiones entre su popularidad y su ilegitimidad política.
+]
+
+
+---
+class: slideInRight, fadeOutLeft, middle
+
+.pull-left[
+# .green[Introducción]
+- **Autenticidad** como concepto central en la valoración y evaluación de artistas.
+- Preguntas clave:
+  - ¿Qué significa "mantenerlo real" en el rap?
+  - ¿Cómo se tensiona este concepto en diferentes contextos culturales y sociales?
+]
+
+.pull-right[
+![Música urbana](img/1.jpg)
+]
+---
+background-image: url("img/3.jpg")
+background-size: cover
+
+class: slideInRight, fadeOutLeft, middle
+# *Keepin it Real*
+
+.pull-left[
+### Significados Clave:
+- Mantenerlo real: *Stay true to the roots*.
+- Mantenerse real: Ser fiel a uno mismo y a los valores de la comunidad.
+- ¿Qué es "real"? Una construcción cultural que varía según el contexto.
+]
+
+
+]
+
+---
+
+class: slideInRight, fadeOutLeft, middle
+# Tensión 1: La Marca de .red[Origen]
+
+.pull-left[
+### Valorización de lo Subalterno
+- **Modelo Arquetípico:**
+  - Masculino, .red[Negro].
+  - Latino, Popular.
+- **Flexibilidad y Resiliencia:**
+  - Blancos, personas de clases altas.]
+
+.pull-right[
+]
+---
+
+
+class: slideInRight, fadeOutLeft, middle
+# Formas .red[Diversas] de "Lo Real"
+- se valora positivamente la inversión. 
+
+.pull-left[
+### Desigualdades Persistentes
+- **Estructurales:**
+  - Raza: negro vs. blanco (también indígena, mestizo).
+  - Clase: baja vs. media y alta.
+  - Espacio: *"Yo represento a mi barrio/guetto"*.
+- **Relación con el hampa.**
+- **Género:**
+  - Masculino vs. femenino (una dicotomía no subalterna).]
+.pull-right[
+![Música urbana](img/4.jpg)
+]
+
+---
+
+background-image: url("img/5.png")
+background-size: 700px 900px
+
+
+---
+background-image: url("img/6.png")
+background-size: cover
+
+class: slideInRight, fadeOutLeft, bottom
+## .red[Formas] Diversas de "Lo Real"
+.pull-left[
+### Mercado y Perspectivas Personales
+- **Mercado:**
+  - Underground vs. mainstream.
+- **Perspectivas personales:**
+  - Ser fiel a uno mismo.
+  - Ser original.
+  - Demostrar habilidades (skills).]
+.pull-right[
+]
+
+
+---
+class: slideInRight, fadeOutLeft, middle
+
+# Ghetto Fabulous en el Hip-Hop
+
+.pull-left[
+### Definición
+- **Celebración del éxito**: Ostentación de lujo (joyas, autos, ropa).
+- **Raíces subalternas**: Orgullo por el gueto y la lucha personal.
+- **Autenticidad**: Mantener la identidad sin asimilarse a valores dominantes.
+]
+
+.pull-right[
+### Ejemplo: Jay-Z
+- De Marcy Projects al éxito global.
+- Letras como *"Empire State of Mind"* combinan orgullo y lujo.
+
+### Importancia
+- **Resistencia cultural o nuevo consumismo**: 
+  - Redefinir el éxito desde las raíces populares.
+  - Desafía las élites o son nuevos individualismos.
+]
+
+
+
+
+---
+background-image: url("img/7.jpg")
+background-size: cover
+
+class: slideInRight, fadeOutLeft, bottom
+# Autenticidad Situacional
+.pull-left[
+- .red[Concepto desarrollado por Harkness (2012):
+  - *«La autenticidad situacional se produce cuando una persona enfatiza ciertas categorías normativas mientras resta importancia a otras»* (p. 288).]
+- Ejemplos:
+  - Raperos blancos: enfatizan habilidades, minimizan raza.
+  - Raperas: adoptan personajes masculinos para desdibujar género.
+  - Raperos clases madias y altas: destacan sus sufrimientos y generan analogias con .black[otros] sectores sociales.
+]
+.pull-right[
+]
+---
+background-image: url("img/8.png")
+background-size: cover
+
+class: slideInRight, fadeOutLeft, bottom
+# .red[Cambios en los Estereotipos de Autenticidad]
+.pull-left[
+### Generación y Nuevos Valores
+- Historia del Hip Hop:
+  - Ser fiel a los orígenes.
+  - Representar a las nuevas generaciones.
+- Reconocimiento de otros valores:
+  - Vulnerabilidad masculina, psicologización e individualización. 
+]
+.pull-right[
+]
+---
+class: slideInRight, fadeOutLeft, middle
+<blockquote style="font-style: italic; color: #555; border-left: 4px solid #ff5733; padding-left: 10px;">
+.white["Si el hip-hop se ha caracterizado por una sólida descripción pública de parámetros socioespaciales expansivos en los que las identidades "reales" masculinas de gánster se cohesionan dentro de los enclaves de regiones y ciudades (en el barrio, en la manzana o en la esquina), a lo largo de la década de 2000 se ha intensificado gradualmente una tendencia diferente. La articulación de la autenticidad en el hip-hop y la música rap se **interioriza** cada vez más, desplazándose hacia el ámbito del pensamiento y los sentimientos íntimos con un nuevo énfasis en la expresión afectiva y, sobre todo, un modo confesional más abierto que explora cuestiones de salud mental y otras formas de malestar y bienestar mental/emocional."]
+<br>
+ — Murray Forman (2020)
+</blockquote>
+
+
+---
+class: slideInRight, fadeOutLeft, middle
+# Variaciones .red[Locales] de la Autenticidad
+.pull-left[
+### Ejemplo: Senegal
+- Aceptación parcial de estereotipos estadounidenses.
+- Rechazo de otros valores:
+  - En Senegal, se prioriza lo político durante períodos dominados por estilos como los de 50 Cent en USA.
+  - Latinoamérica: .green[lo índigena,] .red[lo nacional]
+]
+.pull-right[
+]
+
+---
+class: slideInRight, fadeOutLeft, middle
+# Resumen: Formas de "Lo Real" (1)
+
+
+| **Categoría**                 | **Subcategoría/Aspecto**                                   | **¿Qué se valora?**                                                                                     |
+|-------------------------------|----------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| **Desigualdades Persistentes**| **Estructurales**                                        | - **Raza:** Negro vs. blanco (también indígena, mestizo). <br> - **Clase:** Baja vs. media/alta. <br> - **Espacio:** Representación del barrio/gueto. |
+|                               | **Relación con el hampa**                                | Asociaciones con actividades ilegales o marginales que refuerzan una percepción de autenticidad.    |
+|                               | **Género**                                              | Masculino vs. femenino, con el masculino tradicionalmente asociado a la autenticidad.               |
+
+---
+class: slideInRight, fadeOutLeft, middle
+
+# Resumen: Formas de "Lo Real" (2)
+
+
+| **Categoría**     | **Subcategoría/Aspecto**                                   | **Descripción**                                                                                     |
+|-------------------|----------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| **Mercado**       | **Underground vs. Mainstream**                           | - *Underground*: Representa lo auténtico, alejado de dinámicas comerciales. <br> - *Mainstream*: Puede ser visto como menos auténtico. |
+| **Personales**    | **Ser fiel a uno mismo**                                 | Mantener coherencia entre identidad personal y artística.                                           |
+|                   | **Ser original**                                        | Innovar y diferenciarse dentro del género.                                                         |
+|                   | **Habilidades (skills)**                                | Competencia técnica, lírica y musical como indicadores de autenticidad.                            |
+| **Autenticidad Situacional** | **Categorías Normativas**                     | Enfatizar ciertos valores como habilidades y fidelidad personal, minimizando raza o género.         |
+|                   | **Ejemplos de Uso**                                     | Raperos blancos: Enfatizan habilidades y minimizan raza. <br> Raperas: Adoptan personajes masculinos para neutralizar género. |
+
+---
+class: slideInRight, fadeOutLeft, middle
+
+# Resumen: Formas de "Lo Real" (Parte 3)
+
+
+| **Categoría**                 | **Subcategoría/Aspecto**                                   | **Descripción**                                                                                     |
+|-------------------------------|----------------------------------------------------------|-----------------------------------------------------------------------------------------------------|
+| **Cambios Generacionales**    | **Historia del Hip Hop vs. Actualidad**                  | - Historia: Fidelidad a los orígenes. <br> - Actualidad: Representación de valores de nuevas generaciones. |
+| **Reconocimiento de Nuevos Valores** | **Vulnerabilidad Masculina**                       | Explorar emociones y fragilidad masculina, ampliando concepciones tradicionales de autenticidad.    |
+| **Variaciones Locales**       | **Adaptaciones culturales** 
+
+
+
+---
+class: slideInRight, fadeOutLeft, middle
+
+
+# .yellow[Conclusión]
+
+- La .orange[autenticidad] en el rap es .cyan[multifacética], pero con una marca de origen (.pink[subalterna]).
+- Por su inversión se expresan tensiones entre lo .pink[subalterno] y lo .cyan[dominante]: 
+  - salida del .green[Ghetto Fabulous] como búsqueda de equilibrio y ascenso
+- Su significado varía según:
+  - Configuración de las .orange[desigualdades] en términos locales.
+  - .cyan[Mercado].
+  - Centralidad de lo .orange[personal] y .pink[colectivo].
+
+---
+
+class: middle
+
+# .yellow[Preguntas y Discusión]
+
+- ¿Qué opinas sobre las tensiones en torno a la .orange[autenticidad]?
+- ¿Cómo se vinculan estos modos de pensar el .cyan[valor] en otros casos?
+- Lo .orange[latino], las .pink[feminidades]
