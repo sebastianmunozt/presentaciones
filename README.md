@@ -8,4 +8,4 @@
 
 | n°   | Fecha              | Contenido                           | Material                                                                                               |
 |------|--------------------|-------------------------------------|--------------------------------------------------------------------------------------------------------|
-| 1    | 30-11-2024         | Taller Zotero                       | [`PPT`](https://sebastianmunozt.github.io/presentaciones/presentaciones/importanciaMU#1)            |
+| 1    | 13-12-2024         | Por qué es importante la música urbana  | [`PPT`](https://sebastianmunozt.github.io/presentaciones/presentaciones/importanciaMU#1)            |
