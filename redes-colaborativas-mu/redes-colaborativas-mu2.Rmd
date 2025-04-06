@@ -1,0 +1,780 @@
+---
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+      font-family: "Outfit, Arial, sans-serif"
+
+
+---
+
+
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+
+# Carga de paquetes
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(xaringan, xaringanthemer, tidyverse, gt, kableExtra, xaringanExtra, tidyverse, readr, networkD3, 
+               igraph, htmlwidgets, tidyr)
+
+
+# Estilos personalizados con aumento del tamaño de fuente
+style_duo_accent_inverse(
+  primary_color = "#FFFFFF",
+  secondary_color = "#808080",
+  inverse_header_color = "#A8FBC8",
+  base_font_size = "30px" # Ajuste del tamaño global de la fuente
+)
+
+xaringanExtra::use_animate_css()
+xaringanExtra::use_tachyons()
+xaringanExtra::use_share_again()
+xaringanExtra::use_tile_view()
+```
+
+class: bottom
+background-image: url("img/portada.gif")
+background-size: cover
+
+<div style="position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%); 
+            background: rgba(255, 255, 255, 0.7); padding: 15px; 
+            border: 3px solid black; border-radius: 10px; text-align: center; width: 80%; color: black;">
+
+<span style="font-size: 38px; font-weight: bold;">
+Las Palabras y Las Redes: Individualización colaborativa de la "Música Urbana" en Chile
+</span>  
+<br><br>
+<span style="font-size: 24px;">
+Sebastián Muñoz Tapia  
+<br>
+CMUS / Rap&Tecnologías
+</span>
+
+</div>
+
+
+---
+class: slideInRight, middle, inverse
+
+
+### Índice
+
+1. Introducir preguntas y propuesta
+2. Problematización: Individualización de la música y géneros musicales
+3. Algunos conceptos
+  - Mundos y géneros musicales
+4. Propuesta y casos
+  - colaboración entre artistas, uso de SNA + historia y etnografía
+5. Resultados  
+  - La especificidad de la "música urbana" en Chile
+  - Las redes de la "música urbana" en Chile
+  - La identificación de subgrupos
+6. Conclusiones
+
+
+---
+
+class: middle, slideInRight, fadeOutLeft
+
+
+#### 1. Introducir preguntas y propuesta
+- ¿Cómo se establiza la categoría "música urbana" en Chile observando los procesos de colaboración entre artístas?
+  - ¿Qué tiene de específico el caso chileno?
+
+ 
+
+#### Propuesta:  
+- **Palabras**: Categorización en géneros musicales.
+- **Redes**: Relaciones entre artistas. Uso SNA, etnografía e historia.
+- **Individualización**: Música Urbana es paradigmática.
+
+---
+
+class: bottom, slideInRight, fadeOutLeft, inverse
+
+# 1. Problematización: individualización en la Música y géneros musicales
+
+---
+
+
+class: bottom, slideInRight, fadeOutLeft
+background-image: url("img/1980album.png")
+background-size: cover
+
+---
+class: bottom, slideInRight, fadeOutLeft
+background-image: url("img/1990album.png")
+background-size: cover
+
+---
+class: bottom, slideInRight, fadeOutLeft
+background-image: url("img/2000strem.png")
+background-size: cover
+
+---
+class: middle, slideInRight, fadeOutLeft
+
+### ¿Qué está pasando con la música?
+- **Ámbito de producción**: importancia de figuras solitas, puede llevar a ciertas teorías individualistas sobre la creatividad: los genios, las figuras, los grandes nombres.
+- **Ámbito de la escucha**: acceso a amplía cantidad de músicas por plataformas de streaming, personas no tan apegadas a géneros musicales en particular.
+
+> ¿Siguen siendo importantes los géneros musicales o son en extremo contingentes y caóticos?
+
+---
+background-image: url("img/temp/4.png")
+background-size: cover
+class: middle, slideInRight, fadeOutLeft
+
+#### Pero: 
+- los géneros como **forma de categorización** siguen siendo utilizados. Lo usan los artistas para decir lo que hacen y los oyentes para decir lo que escuchan. Aparecen en los playlist y cuando nombramos lo que estudiamos (Buch, 2013, 2018)
+- a pesar de la relevancia de las figuras individuales, es necesario destacar las **redes socio-técnicas digitalizadas** en las que estas figuras emergen.
+  
+---
+background-image: url("img/temp/4.png")
+background-size: cover
+class: middle, slideInRight, fadeOutLeft
+
+### Entonces, cómo hipótesis:  
+Para entender un género, un hiper o metagénero, como la "música urbana" tendríamos que poner en relación.
+- Procesos de individualización en la producción y en la escucha.
+- Modificaciones que se produjeron en las redes socio-técnicas derivadas de la digitalización.
+- La producción de procesos de colaboración flexible entre diversos actores de ese mundo musical.
+
+
+---
+
+class: bottom, slideInRight, fadeOutLeft, inverse
+
+# 2. Algunos conceptos: Mundos y géneros musicales.  
+
+---
+
+background-image: url("img/temp/4.png")
+background-size: cover
+class: middle, slideInRight, fadeOutLeft
+
+### Mundos Musicales (Crossley, 2015)
+- adapta para el concepto de mundos del arte de Becker, considerando procesos de colaboración entre diversos actores, desdde los artistas, los técnicos, las audiencias, los manager, etcétera. 
+- señala el potencial del SNA para el estudio de estas cadenas de cooperación. 
+
+---
+class: middle, slideInRight, fadeOutLeft
+
+#### ¿Cómo emergen y se articulan las categorías para designar las músicas, entre quienes las hacen, las escuchan, escriben sobre ellas o las promocionan?
+#### ¿Cómo las categorías se ponen en tensión con las relaciones que parecen designar? (Paradoja de Nadel, P. DiMaggio,1993)
+---
+background-image: url("img/temp/4.png")
+background-size: cover
+class: middle, slideInRight, fadeOutLeft
+
+### Generos musicales (Drott, 2014; Buch, 2013, 2018)
+- Aspectos sonoros y técnicos
+- Aspectos sociales: asociados a clase, raza, género.
+- Papel diferencial de distintos  actores: las definiciones de los músicos, de los fans, de la "industria" (sellos, distribuidoras), de los periodistas y críticos, e, incluso de los algoritmos de clasificación.
+- Proceso de etiquetaje: genealogías.
+- Ensamblados: sonidos, personas, discursos, tecnologías 
+- Meta/Hiper-géneros: Rock, Música Clásica, Música Urbana 
+
+
+---
+class: bottom, slideInRight, fadeOutLeft, inverse
+
+# 3. Propuesta y casos  
+
+
+---
+class: middle, slideInRight, fadeOutLeft
+
+- Bajo una teoría de ensamblaje
+	- podría evitar elegir *a priori* uno de estos elementos y observar cómo la asociación entre ellos permiten estabilizar ciertas categorías.
+- **Foco de esta presentación**: ¿Qué papel juegan las interacciones entre los artistas?
+- Algo poco tratado en la discusión sobre géneros musicales, especialmente con SNA.
+- Uso de SNA informado por etnografía e historia de la Música urbana chilena
+
+
+
+---
+class: middle, slideInRight, fadeOutLeft
+
+### Antecedentes de interés estudiados con SNA
+1.**Tropicália** en Brasil (1958-1969) (Kirschbaum & Carvalho de Vasconcelos, 2007):
+	- Llena un *agujero estructural* entre el *MPB* y la *Jovem Guarda*
+	- Figuras de Caetano y Gil como intermediarios (*brokers*): generon colaboraciones estratégicas entre músicos de distintos estilos (música brasilera con rock, la psicodelia, el jazz) , ayudando a cerrar brechas estructurales y conformar una nueva categoría.
+	
+[https://www.youtube.com/watch?v=0fGDwghM668](https://www.youtube.com/watch?v=0fGDwghM668)
+---
+background-image: url("img/temp/4.png")
+background-size: cover
+class: middle, slideInRight, fadeOutLeft
+
+2.**Yacht Rock** (fines 1970, inicios de 1980) en EEUU (Grubesic, 2024)
+	- Los Ángeles: condiciones ideales para la colaboración: 
+		- infraestructura urbana
+		- estudios de grabación
+	- combinación de jazz, funk y softrock
+	- Toto y Steely Dan 
+
+
+---
+class: middle, slideInRight, fadeOutLeft
+
+3.**Rap frances** (década 1990): "Del rap en francés al rap francés: como la emergencia de un mundo social socioprofesional" (Hammou, 2009)
+	- cómo se pasó de redes fragmentadas y de baja densidad a que el 80% de los artistas se son parte de un único componente
+[https://www.youtube.com/watch?v=ujdfacihT_U](https://www.youtube.com/watch?v=ujdfacihT_U)
+
+---
+background-image: url("img/temp/4.png")
+background-size: cover
+class: middle, slideInRight, fadeOutLeft
+
+- ¿Cuáles son los factores que permiten entender la colaboración?
+	- infraestructura tecnológica
+	- geografía: espacios de reunión, ciudades
+	- clase y raza
+	- popularidad
+	- ocupar ciertos espacios vacios cómo intermediarios para unir ambientes distintos
+
+
+---
+
+class: bottom, slideInRight, fadeOutLeft, inverse
+
+# 4. Resultados
+---
+class: bottom, slideInRight, fadeOutLeft
+background-image: url("img/tyler.png")
+background-size: cover
+
+# <span class="f4 fw6 grey" style="position: absolute; top: 10px; left: 50%; transform: translateX(-50%); color: #FFFFFF;"> ¿Qué es la música urbana?</span>
+
+<div class="ba bw1" style="border-color: #808080; background-color: #000000; color: #FFFFFF; padding: 10px; border-radius: 6px; margin: 0 auto; width: 80%; position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%);">
+  <p style="font-size: 0.85em; color: #FFFFFF; margin: 5px 0;">
+    <span class="fw6 underline" style="color: #FFFFFF;">Estados Unidos:</span> 
+    (1) "Urban music" = eufemismo para Hip Hop y R&B; (2) Asociado a "música negra".
+  </p>
+  <p style="font-size: 0.85em; color: #FFFFFF; margin: 5px 0;">
+    <span class="fw6 underline" style="color: #FFFFFF;">Francia:</span> 
+    (1) <em>Musique urbaine</em>: políticas públicas en barrios desfavorecidos; 
+    (2) Incluye rap, R&B y afro-trap.
+  </p>
+</div>
+
+---
+class: bottom, slideInRight, fadeOutLeft
+background-image: url("img/crisflow.png")
+background-size: cover
+
+<div class="ba bw1" style="border-color: #808080; background-color: #000000; color: #FFFFFF; padding: 10px; border-radius: 6px; margin: 0 auto; width: 80%; position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%);">
+  <p style="font-size: 0.85em; color: #FFFFFF; margin: 5px 0;">
+    <span class="fw6 underline" style="color: #FFFFFF;">Chile:</span>
+    (1) Fusión de reguetón y trap. También Mambo. Relación ambigua con Rap.
+  </p>
+  <p style="font-size: 0.85em; color: #FFFFFF; margin: 5px 0;">
+    (2) Influencia de Puerto Rico como puente cultural.
+  </p>
+  <p style="font-size: 0.85em; color: #FFFFFF; margin: 5px 0;">
+    (3) Rap vinculado al <em>boom-bap</em> e imagen de crítica social.
+  </p>
+</div>
+
+---
+class:  middle, slideInRight, fadeOutLeft, inverse
+
+####  Especificidades de la Música Urbana en Chile y el Cambio Generacional
+
+
+
+
+---
+
+
+background-image: url("img/escucha de música chile.jpeg")
+background-size: content
+
+
+---
+background-image: url("img/temp/4.png")
+background-size: cover
+class: middle, slideInRight, fadeOutLeft
+
+### Aspecto económico
+
+- Mercado nacional basado en plataformas digitales.  
+  - *Streaming*, smartphones e internet.  
+- Transformación de industrias culturales:  
+  - Sellos editoriales → Distribuidoras digitales.  
+  - Oportunidades laborales y casos de éxito.  
+- Plataformas como Spotify y YouTube:  
+  - Democratización y dilemas (el "Rappi" o el "Uber" de la música).  
+  
+---
+
+class: middle, slideInRight, fadeOutLeft
+
+### Aspecto social
+
+- Narrativas, imaginarios y prácticas transversales.  
+- Juventudes y sectores subalternos:  
+  - Elementos generacionales y estéticos.  
+  - Tecnologías y autenticidad.  
+
+### Ejemplo:
+.red["Dale tu corte"]: fidelidad a lo propio y originalidad.
+
+---
+
+class: bottom, slideInRight, fadeOutLeft
+background-image: url("img/magic.png")
+background-size: cover
+
+---
+background-image: url("img/temp/4.png")
+background-size: cover
+class: middle, slideInRight, fadeOutLeft
+
+# Aspecto estético-artístico
+
+- La música urbana no refleja lo social, lo produce.  
+- Características clave:  
+  - Creación mediante software y hardware.  
+  - Distribución digital (Spotify, YouTube).  
+  - Importancias de solistas y colectivos flexibles (*feats*).  
+  
+ 
+
+---
+class:  middle, slideInRight, fadeOutLeft
+
+## Metodología: 
+  - **Extracción de datos**: canciones de artistas chilenos en Spotify entre 2019 a 2024 (Difícil!)
+  - **Generación Nominal de 2 redes**: Urbanos (trap, reggaeton, mambo, rap) y No-Urbano (todo el resto)
+  - **Nodos**: Artistas (Grupos o Solistas) con más de 2000 followers, Atributos (Followers, Género, Género Musical, Solista/Grupo). 
+  - **Edges**: Colaboración en canciones, Vínculos Recíprocos, con Peso (cantidad de colaboraciones)
+
+
+---
+class:  center, middle, slideInRight, fadeOutLeft
+
+
+```{r distribucion-artistas, echo=FALSE, fig.align='center', fig.width=10, fig.height=6, out.width='100%'}
+# Crear los datos
+data <- data.frame(
+  category = c("No-Urbanos", "Urbanos"),
+  group = c(52.7, 14.4),
+  solo = c(47.3, 85.6)
+)
+
+# Transformar los datos a formato largo
+data_long <- data %>%
+  pivot_longer(cols = c(group, solo), names_to = "type", values_to = "percentage")
+
+# Crear el gráfico
+ggplot(data_long, aes(x = category, y = percentage, fill = type)) +
+  geom_bar(stat = "identity", position = "dodge", width = 0.7) +
+  labs(
+    title = "Distribución de Artistas por Categoría",
+    x = "Categoría",
+    y = "Porcentaje (%)",
+    fill = "Tipo"
+  ) +
+  scale_fill_manual(values = c("group" = "#808080", "solo" = "#A8FBC8")) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 16, face = "bold"),
+    axis.text = element_text(size = 12),
+    axis.title = element_text(size = 14),
+    legend.position = "top"
+  )
+
+
+
+```
+
+---
+
+
+background-image: url("img/mu/mu2.png")
+background-size: cover
+class: slideInRight, fadeOutLeft
+
+<div class="ba bw1" style="border-color: #808080; background-color: #000000; color: #FFFFFF; padding: 10px; border-radius: 6px; margin: 0 auto; width: 80%; position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%);">
+  <p style="font-size: 1.2em; color: #FFFFFF; margin: 5px 0; text-align: center;">
+    <span class="fw6" style="color: #FFFFFF;">3.1.1. No Urbano</span>
+  </p>
+</div>
+
+
+
+---
+background-image: url("img/mu/mu1.png")
+background-size: cover
+class: slideInRight, fadeOutLeft
+
+<div class="ba bw1" style="border-color: #808080; background-color: #000000; color: #FFFFFF; padding: 10px; border-radius: 6px; margin: 0 auto; width: 80%; position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%);">
+  <p style="font-size: 1.2em; color: #FFFFFF; margin: 5px 0; text-align: center;">
+    <span class="fw6" style="color: #FFFFFF;">3.1.2. Urbano (Rap, Trap, Reggaetón, Dancehall)</span>
+  </p>
+</div>
+
+
+---
+class:  middle, slideInRight, fadeOutLeft
+
+###  Medidas para toda la Red 
+
+
+
+<table style="font-size: 16px; width: 100%; text-align: center; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="border: 1px solid #ddd; padding: 8px;">Métrica</th>
+      <th style="border: 1px solid #ddd; padding: 8px;">Urbanos</th>
+      <th style="border: 1px solid #ddd; padding: 8px;">No Urbanos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">Número de nodos</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">425</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">339</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">Número de aristas</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">3906</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">679</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">Densidad</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">0.0434</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">0.0119</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">Diámetro (componente más grande)</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">7</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">10</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">Modularidad</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">0.492</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">0.644</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">Centralización (grado)</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">0.268</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">0.109</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 8px;">Robustez (tamaño mayor componente tras remover hubs)</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">408</td>
+      <td style="border: 1px solid #ddd; padding: 8px;">208</td>
+    </tr>
+  </tbody>
+</table>
+
+
+- **Red urbana**: + colaboraciones, + probabilidad de conexión entre nodos  (más densa), - diámetro  (conexiones más cercanas), - generación de grupos (modularidad), + presencia de intermediarios relevantes (centralización), + robusta al eliminar los nodos claves (robustez)
+
+
+---
+
+
+class:  bottom, slideInRight, fadeOutLeft, inverse
+
+##  Medidas por nodos 
+
+
+---
+class: center, middle, slideInRight, fadeOutLeft
+
+#### Top15 Degree Urbanos
+
+<table style="font-size: 10px; text-align: left; width: 100%; table-layout: fixed;">
+  <thead>
+    <tr>
+      <th style="width: 80%;">Artista</th>
+      <th style="width: 20%;">Degree</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>El BAI</td><td>132</td></tr>
+    <tr><td>Jairo Vera</td><td>124</td></tr>
+    <tr><td>Marcianeke</td><td>103</td></tr>
+    <tr><td>Balbi El Chamako</td><td>95</td></tr>
+    <tr><td>Gabo El Chamaquito</td><td>92</td></tr>
+    <tr><td>Basty Corvalan</td><td>92</td></tr>
+    <tr><td>Z Jocker</td><td>86</td></tr>
+    <tr><td>Tunechikidd</td><td>85</td></tr>
+    <tr><td>King Savage</td><td>81</td></tr>
+    <tr><td>Bayriton</td><td>81</td></tr>
+    <tr><td>Flor De Rap</td><td>78</td></tr>
+    <tr><td>Sayian Jimmy</td><td>77</td></tr>
+    <tr><td>Cease</td><td>76</td></tr>
+    <tr><td>Gran Rah</td><td>76</td></tr>
+    <tr><td>Pablo Chill-E</td><td>75</td></tr>
+  </tbody>
+</table>
+
+
+---
+
+class: center, middle, slideInRight, fadeOutLeft
+
+#### Top15 Betweenness Urbanos: Intermediarios
+
+<table style="font-size: 10px; text-align: left; width: 100%; table-layout: fixed;">
+  <thead>
+    <tr>
+      <th style="width: 80%;">Artista</th>
+      <th style="width: 20%;">Betweenness</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Flor De Rap</td><td>14044.098</td></tr>
+    <tr><td>Cease</td><td>10559.195</td></tr>
+    <tr><td>Stailok</td><td>4313.065</td></tr>
+    <tr><td>El BAI</td><td>4291.637</td></tr>
+    <tr><td>Jonas Sanche</td><td>3756.524</td></tr>
+    <tr><td>El Shaaki</td><td>3705.177</td></tr>
+    <tr><td>LoyaltTy</td><td>3513.894</td></tr>
+    <tr><td>Tunechikidd</td><td>3266.119</td></tr>
+    <tr><td>Utopiko</td><td>3222.559</td></tr>
+    <tr><td>Marcianeke</td><td>2889.434</td></tr>
+    <tr><td>Aerstame</td><td>2879.818</td></tr>
+    <tr><td>Nfx</td><td>2818.327</td></tr>
+    <tr><td>Liricistas</td><td>2784.329</td></tr>
+    <tr><td>Jairo Vera</td><td>2706.338</td></tr>
+    <tr><td>Gran Rah</td><td>2644.804</td></tr>
+  </tbody>
+</table>
+
+
+---
+
+class: center, middle, slideInRight, fadeOutLeft
+
+#### Top15 Eigenvector Centrality Urbanos: Influyentes
+
+<table style="font-size: 10px; text-align: left; width: 100%; table-layout: fixed;">
+  <thead>
+    <tr>
+      <th style="width: 80%;">Artista</th>
+      <th style="width: 20%;">Eigenvector Centrality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>El BAI</td><td>1.000000</td></tr>
+    <tr><td>Jairo Vera</td><td>0.952304</td></tr>
+    <tr><td>Balbi El Chamako</td><td>0.800586</td></tr>
+    <tr><td>Basty Corvalan</td><td>0.793309</td></tr>
+    <tr><td>Marcianeke</td><td>0.784357</td></tr>
+    <tr><td>Gabo El Chamaquito</td><td>0.742659</td></tr>
+    <tr><td>Z Jocker</td><td>0.715532</td></tr>
+    <tr><td>Bayriton</td><td>0.714797</td></tr>
+    <tr><td>Nysix Music</td><td>0.689300</td></tr>
+    <tr><td>Sayian Jimmy</td><td>0.677721</td></tr>
+    <tr><td>Benji Gramitos</td><td>0.659307</td></tr>
+    <tr><td>King Savage</td><td>0.653501</td></tr>
+    <tr><td>Tunechikidd</td><td>0.632239</td></tr>
+    <tr><td>El Goldo De Las Conec</td><td>0.625132</td></tr>
+    <tr><td>Son Gotten</td><td>0.586307</td></tr>
+  </tbody>
+</table>
+
+
+---
+
+class:  bottom, slideInRight, fadeOutLeft, inverse
+
+## Identificación de Sub-Grupos
+
+---
+
+
+
+
+background-image: url("img/mu/mu3.png")
+background-size: cover
+class: slideInRight, fadeOutLeft
+
+<div class="ba bw1" style="border-color: #808080; background-color: #000000; color: #FFFFFF; padding: 10px; border-radius: 6px; margin: 0 auto; width: 80%; position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%);">
+  <p style="font-size: 1.2em; color: #FFFFFF; margin: 5px 0; text-align: center;">
+    <span class="fw6" style="color: #FFFFFF;">4.1 Por Rap vs. "Urbano Chileno" </span>
+  </p>
+</div>
+
+
+
+---
+background-image: url("img/mu/mu4.png")
+background-size: cover
+class: slideInRight, fadeOutLeft
+
+<div class="ba bw1" style="border-color: #808080; background-color: #000000; color: #FFFFFF; padding: 10px; border-radius: 6px; margin: 0 auto; width: 80%; position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%);">
+  <p style="font-size: 1.2em; color: #FFFFFF; margin: 5px 0; text-align: center;">
+    <span class="fw6" style="color: #FFFFFF;"> 4.2 Por Louvain Communities </span>
+  </p>
+</div>
+
+---
+class: center, middle, slideInRight, fadeOutLeft
+
+#### Identificando los sub-grupos
+
+
+<div style="display: flex; justify-content: space-between;">
+
+  <!-- Tabla de la izquierda -->
+  <table style="font-size: 10px; text-align: left; width: 48%; table-layout: fixed;">
+    <thead>
+      <tr>
+        <th style="width: 40%;">Artista</th>
+        <th style="width: 20%;">Grupo</th>
+        <th style="width: 20%;">Betweenness</th>
+        <th style="width: 20%;">Degree</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Loyaltty</td><td>1</td><td>4852.72</td><td>31</td></tr>
+      <tr><td>Julianno Sosa</td><td>1</td><td>3047.85</td><td>49</td></tr>
+      <tr><td>Gino Mella</td><td>1</td><td>2961.50</td><td>50</td></tr>
+      <tr><td>Pablo Chill-E</td><td>1</td><td>2421.42</td><td>60</td></tr>
+      <tr><td>Drago200</td><td>1</td><td>2411.01</td><td>45</td></tr>
+      <tr><td>Marcianeke</td><td>2</td><td>3008.81</td><td>78</td></tr>
+      <tr><td>El BAI</td><td>2</td><td>2872.62</td><td>92</td></tr>
+      <tr><td>Tunechikidd</td><td>2</td><td>2670.71</td><td>71</td></tr>
+      <tr><td>Jairo Vera</td><td>2</td><td>2641.64</td><td>89</td></tr>
+      <tr><td>Malito Malozo</td><td>3</td><td>2175.00</td><td>41</td></tr>
+      <tr><td>Stailok</td><td>3</td><td>4215.08</td><td>44</td></tr>
+      <tr><td>Cestar</td><td>3</td><td>3406.11</td><td>46</td></tr>
+      <tr><td>Aerstame</td><td>3</td><td>2488.02</td><td>45</td></tr>
+      <tr><td>Movimiento Original</td><td>3</td><td>2165.82</td><td>33</td></tr>
+      <tr><td>Hordatotj</td><td>3</td><td>1021.44</td><td>17</td></tr>
+      <tr><td>Flor De Rap</td><td>4</td><td>12377.03</td><td>69</td></tr>
+      <tr><td>Cease</td><td>4</td><td>7772.05</td><td>62</td></tr>
+      <tr><td>Utopiko</td><td>4</td><td>4041.69</td><td>39</td></tr>
+      <tr><td>Nfx</td><td>4</td><td>3513.99</td><td>47</td></tr>
+      <tr><td>Jonas Sanche</td><td>4</td><td>3102.49</td><td>55</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Tabla de la derecha -->
+  <table style="font-size: 10px; text-align: left; width: 48%; table-layout: fixed;">
+    <thead>
+      <tr>
+        <th style="width: 40%;">Artista</th>
+        <th style="width: 20%;">Grupo</th>
+        <th style="width: 20%;">Betweenness</th>
+        <th style="width: 20%;">Degree</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Mente Sabia Crú</td><td>5</td><td>1872.56</td><td>26</td></tr>
+      <tr><td>Frainstrumentos</td><td>5</td><td>1537.03</td><td>40</td></tr>
+      <tr><td>Masquemusica</td><td>5</td><td>1402.24</td><td>10</td></tr>
+      <tr><td>Salvaje Decibel</td><td>5</td><td>1286.16</td><td>19</td></tr>
+      <tr><td>Portavoz</td><td>5</td><td>1100.16</td><td>39</td></tr>
+      <tr><td>Poison Kid</td><td>6</td><td>3308.66</td><td>6</td></tr>
+      <tr><td>Killua97</td><td>6</td><td>2245.24</td><td>23</td></tr>
+      <tr><td>Tukko21</td><td>6</td><td>871.62</td><td>6</td></tr>
+      <tr><td>Kid Lucifer</td><td>6</td><td>863.85</td><td>9</td></tr>
+      <tr><td>Kid Poison</td><td>6</td><td>831.14</td><td>6</td></tr>
+      <tr><td>Juanka El Problematik</td><td>7</td><td>0.00</td><td>1</td></tr>
+      <tr><td>Jetson El Super</td><td>7</td><td>0.00</td><td>1</td></tr>
+      <tr><td>Pablo Antonio</td><td>8</td><td>472.83</td><td>9</td></tr>
+      <tr><td>Lamelodíadelhampa</td><td>8</td><td>22.44</td><td>9</td></tr>
+      <tr><td>Renaglock</td><td>8</td><td>4.00</td><td>4</td></tr>
+      <tr><td>YoungGlizzy</td><td>8</td><td>0.00</td><td>3</td></tr>
+      <tr><td>Japogang</td><td>9</td><td>750.88</td><td>7</td></tr>
+      <tr><td>Yixs98</td><td>9</td><td>10.29</td><td>3</td></tr>
+      <tr><td>Ovz</td><td>9</td><td>0.20</td><td>3</td></tr>
+      <tr><td>Romockstar</td><td>9</td><td>0.00</td><td>1</td></tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+---
+background-image: url("img/temp/4.png")
+background-size: cover
+class: middle, slideInRight, fadeOutLeft
+
+1. Trap y Shishigang
+2. Reggaeton
+3. **Boom&dancehall**
+4. .red[Intermediarios raperos]: https://www.youtube.com/watch?v=ALKn8qJpnC0
+5. **Boom&bap**
+6. Trap, reggaeton alternativo 
+7. Trap zona norte (ryodan), drill: https://www.youtube.com/watch?v=6ksPhRCDixA
+8. Reggaeton malianteo: https://www.youtube.com/watch?v=zIfqaImSrT4
+9. Trap, R&B, reggaeton, plugg alternativo: https://www.youtube.com/watch?v=RC6DPFQ0hZE
+
+---
+class: middle,  slideInRight, fadeOutLeft
+
+- Sigue siguendo relevante lo musical, pero hay tendencias: reggaeton, trap, r&b por un lado,  dancehall-rap y boom-bap por otro, asociadas a generaciones.
+- Hay asociados a zonas geográficas y crews
+- Hay un grupo de raperos que sirven de intermediarios
+- Descubrí nuevas "comunidades
+
+
+---
+
+
+class:  bottom, slideInRight, fadeOutLeft, inverse
+
+## 5. Conclusión
+
+---
+class:  middle, slideInRight, fadeOutLef
+- En "Música Urbana" veo: 
+  - .red[individualización en la figura del artista], con .red[redes colaborativas flexibles]. 
+  - Relacionado con: 
+    - (1) aspectos tecnológicos (como hacer, distribuir, consumir música)
+    - (2) ethos y una estética de esta música. 
+    - (3) **quiebre generacional** al interior de la música urbana: distinción rap versus resto.
+
+---
+background-image: url("img/temp/4.png")
+background-size: cover
+class: middle, slideInRight, fadeOutLeft
+
+- **Las palabras y las redes**: 
+  - (1) Relaciones colaborativas en definir géneros musicales;
+  - (2) Lo estético (sonoro, visual) habilita las colaboraciones. 
+- **Temas más generales**: 
+  - Constitución de un particular tipo de mercado (economía de las plataformas)
+  - Importancia de figuras individuales en hiperconectividad flexible. 
+  - Individualización en la juventud de sectores populares.
+
+---
+background-image: url("img/marcasubalterna.png")
+background-size: cover
+class: middle, slideInRight, fadeOutLeft
+
+
+
+---
+class:  middle, slideInRight, fadeOutLef
+### Cosas a realizar
+- Integrar algún modelo explicativo para entender atributos y procesos más relevantes (Exponential Random Graph Models)
+- Integrar dimensión temporal a la producción colaborativa: cómo y por qué van variando las colaboraciones a través del tiempo, qué aspectos influyen. 
+- Integrar aspecto internacional
+- Entender el fenómeno de la viralización en relación a la colaboración
+
+---
+
+class:bottom, slideInRight, fadeOutLeft
+background-image: url("img/logos.png")
+background-size: cover
+
+
+- rapytecnologias.com
+- cmus.cl
+- @t.rapytecnologias (Instagram)
+- sebastianmunozt@gmail.com

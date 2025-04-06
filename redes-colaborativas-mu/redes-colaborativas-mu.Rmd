@@ -1,0 +1,62 @@
+---
+title: "Palabras, Redes e Individualización: Las redes colaborativas de la Música Urbana en Chile"
+author: "Sebastián Muñoz Tapia (CMUS/Rap y Tecnologias)"
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+      font-family: "Outfit, Arial, sans-serif"
+---
+
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+
+#install.packages("pacman")
+pacman::p_load(xaringan,xaringanthemer,tidyverse, gt,kableExtra, xaringanExtra )
+
+
+style_duo_accent_inverse(
+  primary_color = "#FFFFFF",
+  secondary_color = "#808080",
+  inverse_header_color = "#A8FBC8"
+)
+
+
+```
+
+
+
+```{r xaringan-animate-css, echo=FALSE}
+xaringanExtra::use_animate_css()
+xaringanExtra::use_tachyons()
+xaringanExtra::use_share_again()
+xaringanExtra::use_tile_view()
+
+```
+
+
+
+
+class: middle, slideInRight, fadeOutLeft
+background-image: url("img/3.png")
+background-size: cover
+
+# Introducción: 2 preguntas
+
+
+- ¿Cómo entender la categorización de las músicas? ¿Cómo se les pone nombre a un conjunto de artistas que hacen cosas parecidas o son parecidos? ¿En qué se parecen?
+- ¿Qué cambios genera la "música urbana" en las dinámicas de producción musical y la relación entre los artistas?
+
+Propuesta:  
+- **Palabras**: Categorización de las músicas en géneros musicales como ensamblado con genealogías singulares: sonidos, tecnologías y personas. 
+- **Redes**: Vacio: relaciones entre artistas.
+- **Individualización**: Proceso: Individualización de la música e hiperconectividad.
+
+
+
+---
