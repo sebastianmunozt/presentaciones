@@ -132,8 +132,10 @@ background-image: url("img/temp/4.png")
 background-size: cover
 class: middle, slideInRight, fadeOutLeft
 
-### Entonces, cómo hipótesis:  
-Para entender un género, un "hipergénero" o "metagénero", como la "música urbana" tendríamos que poner en relación.
+### Entonces, cómo hipótesis...  
+
+Para entender un género, un "hipergénero" o "metagénero", como la "música urbana" en Chile tendríamos que poner en relación
+
 - Procesos de individualización en la producción y en la escucha.
 - Modificaciones que se produjeron en las redes socio-técnicas derivadas de la digitalización.
 - La producción de procesos de colaboración flexible entre diversos actores de ese mundo musical.
@@ -229,11 +231,12 @@ class: middle, slideInRight, fadeOutLeft
 
 ### Estado del arte
 - ¿Cuáles son los factores que permiten entender la colaboración?
+	- la posición de intermediario: ocupar ciertos espacios vacíos para unir ambientes distintos
 	- infraestructura tecnológica
 	- geografía: espacios de reunión, ciudades
 	- clase y raza
-	- popularidad
-	- la posición de intermediario: ocupar ciertos espacios vacíos para unir ambientes distintos
+	- estrategias para popularización
+
 
 
 ---
@@ -268,13 +271,13 @@ background-size: cover
 <div class="ba bw1" style="border-color: #808080; background-color: #000000; color: #FFFFFF; padding: 10px; border-radius: 6px; margin: 0 auto; width: 80%; position: absolute; bottom: 10%; left: 50%; transform: translateX(-50%);">
   <p style="font-size: 0.85em; color: #FFFFFF; margin: 5px 0;">
     <span class="fw6 underline" style="color: #FFFFFF;">Chile:</span>
-    (1) Fusión de reguetón y trap. También Mambo. Relación ambigua con Rap.
+    (1) Suele asociarse al reguetón y trap. También Mambo. Relación ambigua con Rap.
   </p>
   <p style="font-size: 0.85em; color: #FFFFFF; margin: 5px 0;">
     (2) Influencia de Puerto Rico como puente cultural.
   </p>
   <p style="font-size: 0.85em; color: #FFFFFF; margin: 5px 0;">
-    (3) Rap vinculado al <em>boom-bap</em> e imagen de crítica social.
+    (3) Separación inicial del Rap vinculado al <em>boom-bap</em> e imagen de crítica social.
   </p>
 </div>
 
@@ -320,7 +323,7 @@ class: middle, slideInRight, fadeOutLeft
   - Elementos tecnológicos
   - Elementos valóricos y de autenticidad.  
 
-### Ejemplo:
+#### Ejemplo:
 .red["Dale tu corte"]: fidelidad a lo propio y originalidad.
 
 ---
@@ -336,7 +339,7 @@ class: middle, slideInRight, fadeOutLeft
 
 # Aspecto estético-artístico
 
-- La música **no refleja lo social**, lo produce (De Nora, Frith).  
+- La música **no refleja lo social**, expresa y produce (De Nora, Frith).  
 - Características clave:  
   - Creación mediante software y hardware.  
   - Distribución digital (Spotify, YouTube).  
@@ -716,10 +719,14 @@ class: middle, slideInRight, fadeOutLeft
 ---
 class: middle,  slideInRight, fadeOutLeft
 
-- Sigue siguendo relevante lo **musical**, pero hay tendencias: reggaeton, trap, r&b por un lado,  dancehall-rap y boom-bap por otro, asociadas a generaciones.
-- Hay asociados a **zonas geográficas** y **crews**.
+### Para armar los grupos:
+
+- Sigue siguendo relevante lo **musical**, donde hay tendencias que agrupan más: reggaeton, trap, r&b por un lado,  dancehall-rap y boom-bap por otro, asociadas a generaciones.
+- Hay asociaciones vinculadas **zonas geográficas** y **crews**.
 - Hay un grupo de raperos que sirven de **intermediarios**.
 - Descubrí nuevas "comunidades".
+
+> A pesar de la individualización de las figuras musicales, fenómenos como la estética (musical), las redes de contacto geográficas y de amistad, siguén siendo relevantes para generar colaboraciones.
 
 
 ---
