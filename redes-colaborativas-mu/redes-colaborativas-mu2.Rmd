@@ -99,17 +99,7 @@ class: bottom, slideInRight, fadeOutLeft, inverse
 
 # 1. Problematización: individualización en la Música y géneros musicales
 
----
 
-
-class: bottom, slideInRight, fadeOutLeft
-background-image: url("img/1980album.png")
-background-size: cover
-
----
-class: bottom, slideInRight, fadeOutLeft
-background-image: url("img/1990album.png")
-background-size: cover
 
 ---
 class: bottom, slideInRight, fadeOutLeft
@@ -117,7 +107,10 @@ background-image: url("img/2000strem.png")
 background-size: cover
 
 ---
+background-image: url("img/temp/4.png")
+background-size: cover
 class: middle, slideInRight, fadeOutLeft
+
 
 ### ¿Qué está pasando con la música?
 - **Ámbito de producción**: importancia de figuras solitas, puede llevar a ciertas teorías individualistas sobre la creatividad: los genios, las figuras, los grandes nombres.
@@ -140,7 +133,7 @@ background-size: cover
 class: middle, slideInRight, fadeOutLeft
 
 ### Entonces, cómo hipótesis:  
-Para entender un género, un hiper o metagénero, como la "música urbana" tendríamos que poner en relación.
+Para entender un género, un "hipergénero" o "metagénero", como la "música urbana" tendríamos que poner en relación.
 - Procesos de individualización en la producción y en la escucha.
 - Modificaciones que se produjeron en las redes socio-técnicas derivadas de la digitalización.
 - La producción de procesos de colaboración flexible entre diversos actores de ese mundo musical.
@@ -160,7 +153,7 @@ background-size: cover
 class: middle, slideInRight, fadeOutLeft
 
 ### Mundos Musicales (Crossley, 2015)
-- adapta para el concepto de mundos del arte de Becker, considerando procesos de colaboración entre diversos actores, desde los artistas, los técnicos, las audiencias, los manager, etcétera. 
+- adapta para el concepto de mundos del arte de H. Becker, considerando procesos de colaboración entre diversos actores, desde los artistas, los técnicos, las audiencias, los manager, etcétera. 
 - señala el potencial del SNA para el estudio de estas cadenas de cooperación. 
 
 ---
@@ -177,9 +170,9 @@ class: middle, slideInRight, fadeOutLeft
 - Aspectos sonoros y técnicos
 - Aspectos sociales: asociados a clase, raza, género.
 - Papel diferencial de distintos  actores: las definiciones de los músicos, de los fans, de la "industria" (sellos, distribuidoras), de los periodistas y críticos, e, incluso de los algoritmos de clasificación.
-- Proceso de etiquetaje: genealogías.
-- Ensamblados: sonidos, personas, discursos, objetos técnicos
-- Meta/Hiper-géneros: Rock, Música Clásica, Música Urbana 
+- **Proceso de etiquetaje**: ponerles nombres, estudiado por genealogías.
+- **Ensamblados**: sonidos, personas, discursos, objetos técnicos
+- **Meta/Hiper-géneros**: Rock, Música Clásica, Música Urbana 
 
 
 ---
@@ -193,7 +186,8 @@ class: middle, slideInRight, fadeOutLeft
 
 - Género como **ensamblaje**
 	- podría evitar elegir *a priori* uno de estos elementos y observar cómo la asociación entre ellos permiten estabilizar ciertas categorías.
-- **Foco de esta presentación**: ¿Qué papel juegan las interacciones entre los artistas?
+- **Foco de esta presentación**: 
+  - ¿Qué papel juegan las interacciones entre los artistas en canciones? (feats.)
 - Algo poco tratado en la discusión sobre géneros musicales, especialmente con SNA.
 - Informado por etnografía e historia de la Música urbana chilena
 
@@ -233,6 +227,7 @@ background-image: url("img/temp/4.png")
 background-size: cover
 class: middle, slideInRight, fadeOutLeft
 
+### Estado del arte
 - ¿Cuáles son los factores que permiten entender la colaboración?
 	- infraestructura tecnológica
 	- geografía: espacios de reunión, ciudades
@@ -261,7 +256,7 @@ background-size: cover
   <p style="font-size: 0.85em; color: #FFFFFF; margin: 5px 0;">
     <span class="fw6 underline" style="color: #FFFFFF;">Francia:</span> 
     (1) <em>Musique urbaine</em>: políticas públicas en barrios desfavorecidos; 
-    (2) Incluye rap, R&B y afro-trap.
+    (2) Incluye rap, R&B y afro-trap; (3) Asociación con Genealogía USA (Hammou, 2023)
   </p>
 </div>
 
@@ -419,7 +414,7 @@ class: slideInRight, fadeOutLeft
 
 <div class="ba bw1" style="border-color: #808080; background-color: #000000; color: #FFFFFF; padding: 10px; border-radius: 6px; margin: 0 auto; width: 80%; position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%);">
   <p style="font-size: 1.2em; color: #FFFFFF; margin: 5px 0; text-align: center;">
-    <span class="fw6" style="color: #FFFFFF;">3.1.2. Urbano (Rap, Trap, Reggaetón, Dancehall)</span>
+    <span class="fw6" style="color: #FFFFFF;"> Urbano (Rap, Trap, Reggaetón, Dancehall)</span>
   </p>
 </div>
 
@@ -706,6 +701,8 @@ background-image: url("img/temp/4.png")
 background-size: cover
 class: middle, slideInRight, fadeOutLeft
 
+### ¿Qué informan los subgrupos generados por el algoritmo?
+
 1. Trap, Shishigang y Puente Alto
 2. Reggaeton 
 3. **Boom-Bap+dancehall**: orbita de Movimiento Original
@@ -719,10 +716,10 @@ class: middle, slideInRight, fadeOutLeft
 ---
 class: middle,  slideInRight, fadeOutLeft
 
-- Sigue siguendo relevante lo musical, pero hay tendencias: reggaeton, trap, r&b por un lado,  dancehall-rap y boom-bap por otro, asociadas a generaciones.
-- Hay asociados a zonas geográficas y crews
-- Hay un grupo de raperos que sirven de intermediarios
-- Descubrí nuevas "comunidades
+- Sigue siguendo relevante lo **musical**, pero hay tendencias: reggaeton, trap, r&b por un lado,  dancehall-rap y boom-bap por otro, asociadas a generaciones.
+- Hay asociados a **zonas geográficas** y **crews**.
+- Hay un grupo de raperos que sirven de **intermediarios**.
+- Descubrí nuevas "comunidades".
 
 
 ---
@@ -749,7 +746,7 @@ class: middle, slideInRight, fadeOutLeft
 - **Las palabras y las redes**: 
   - (1) Relaciones colaborativas en definir géneros musicales;
   - (2) Lo estético (sonoro, visual) habilita las colaboraciones. 
-  - (3) Generacional, territorial comunidades
+  - (3) Generacional, territorial y comunidades
 - **Temas más generales**: 
   - Constitución de un particular tipo de mercado (economía de las plataformas)
   - Importancia de figuras individuales en hiperconectividad flexible. 
