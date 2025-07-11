@@ -2,8 +2,6 @@
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
-    includes:
-      after_body: timer.html
     nature:
       slideNumberFormat: "%current%"
       highlightStyle: github
@@ -11,6 +9,7 @@ output:
       ratio: 16:9
       countIncrementalSlides: true
       font-family: "Outfit, Arial, sans-serif"
+
 ---
 
 
