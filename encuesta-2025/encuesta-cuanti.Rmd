@@ -1,0 +1,165 @@
+---
+output:
+  xaringan::moon_reader:
+    css: xaringan-themer.css
+    includes:
+      after_body: timer.html
+    nature:
+      slideNumberFormat: "%current%"
+      highlightStyle: github
+      highlightLines: true
+      ratio: 16:9
+      countIncrementalSlides: true
+      font-family: "Outfit, Arial, sans-serif"
+---
+
+
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+
+#install.packages("pacman")
+pacman::p_load(xaringan,xaringanthemer,tidyverse, gt,kableExtra, xaringanExtra )
+
+
+style_duo_accent_inverse(
+  primary_color = "#FFFFFF",
+  secondary_color = "#808080",
+  inverse_header_color = "#A8FBC8",
+  base_font_size = "27px"  # Puedes ajustar a 26px, 28px, etc.
+)
+
+
+```
+
+
+
+```{r xaringan-animate-css, echo=FALSE}
+xaringanExtra::use_animate_css()
+xaringanExtra::use_tachyons()
+xaringanExtra::use_share_again()
+xaringanExtra::use_tile_view()
+
+```
+
+
+class: middle, slideInRight, fadeOutLeft
+
+# Encuesta de Estudiantes Antropología 2025
+- Métodos Cuantitativos 1 y 2
+- Universidad Alberto Hurtado
+
+
+---
+
+class: middle, slideInRight, fadeOutLeft
+background-image: url("img/3.png")
+background-size: cover
+
+## Introducción al Proyecto
+
+- Encuesta aplicada a estudiantes de Antropología UAH
+- Objetivo: realizar una investigación cuantitativa centrada en sus intereses
+- Proyecto guiado por el curso y desarrollado en grupos
+
+
+---
+
+class: middle, slideInRight, fadeOutLeft
+
+
+## Proceso de Trabajo
+
+- Formación de grupos y selección de temas
+- Aprendizaje inicial del lenguaje **R**
+- Construcción del proyecto y operacionalización de variables
+
+---
+
+class: middle, slideInRight, fadeOutLeft
+background-image: url("img/1.png")
+background-size: cover
+
+
+## Temas de Investigación
+
+- Uso de redes sociales 📱
+- Calidad docente 👩‍🏫
+- Prácticas sexuales 🧠
+- Prácticas musicales 🎶
+- Seguridad 🔐
+- Salud mental 🧘
+
+---
+
+class: middle, slideInRight, fadeOutLeft
+background-image: url("img/1.png")
+background-size: cover
+
+
+## Desarrollo del Cuestionario
+
+- Primera versión del cuestionario en grupos
+- Equipo de dirección del proyecto: 
+  - **Amílcar, Catalina y Javiera**
+- Prueba piloto y ajustes
+- Versión final del cuestionario
+
+---
+class: middle, slideInRight, fadeOutLeft
+background-image: url("img/1.png")
+background-size: cover
+
+
+## Diseño Muestral
+
+- Universo: estudiantes activos de Antropología UAH
+- Marco muestral: 215 estudiantes
+- Muestreo estratificado por generación
+- Muestra final: 156 respuestas
+
+---
+class: middle, slideInRight, fadeOutLeft
+background-image: url("img/1.png")
+background-size: cover
+
+## Recolección y Análisis de Datos
+
+- Aplicación de encuestas (5 por estudiante)
+- Limpieza y transformación de datos en **R**
+- Procesamiento y análisis por grupo
+- Presentación de resultados
+
+
+---
+
+class: animated, middle, slideInRight, fadeOutLeft
+background-image: url("img/3.png")
+background-size: cover
+
+## Aspectos Destacables ✨
+
+- Proceso cuantitativo completo y centrado en estudiantes
+- Introducción a la programación con **R**
+- Articulación entre enfoque cuantitativo y cualitativo
+- Autonomía y motivación en algunos grupos
+
+
+---
+
+
+
+class: middle, slideInRight, fadeOutLeft
+background-image: url("img/1.png")
+background-size: cover
+
+## Aspectos a Mejorar ⚠️
+
+- Estado de computadores y conectividad
+- Uso de plataformas más robustas que Google Colab
+- Falta de instancias para profundizar en métodos mixtos
+- Pocas oportunidades para explorar herramientas digitales:
+  - Mapas 🗺️
+  - Análisis censal 📊
+  - Análisis de texto 📝
+  - Humanidades digitales 💻
+
