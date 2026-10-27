@@ -1,0 +1,10 @@
+from pathlib import Path
+p=Path('@2026-congreso-musicologia/presentacion-congreso.qmd')
+s=p.read_text(encoding='utf-8')
+s=s.replace('**[Nombre completo por confirmar]**','**Sebastian Matías Muñoz Tapia**').replace('[Afiliación institucional por confirmar]','ANID · Universidad Alberto Hurtado · CMUS').replace('**ANID · Fondecyt de Iniciación**','**Fondecyt de Iniciación N.º 11260379**').replace('[Nombre o número del proyecto por confirmar]','“Nuevas configuraciones de clase y género en la música urbana chilena: una sociología del gusto generacional”').replace('[Correo por confirmar]','[sebastianmunozt@gmail.com](mailto:sebastianmunozt@gmail.com)')
+s=s.replace('Presentar autoría, afiliación y financiamiento. Los campos entre corchetes están pendientes de los datos del expositor. ANID se identifica como organismo de financiamiento, sin asumir que sea la institución de afiliación laboral.','Presentar autoría, afiliación y financiamiento: Sebastian Matías Muñoz Tapia, ANID, Universidad Alberto Hurtado y CMUS. Esta investigación se vincula al Fondecyt de Iniciación N.º 11260379, “Nuevas configuraciones de clase y género en la música urbana chilena: una sociología del gusto generacional”. Contacto: sebastianmunozt@gmail.com.')
+s=s.replace('Identificación pendiente de los datos del expositor en la segunda diapositiva.','Identificación y proyecto del expositor en la segunda diapositiva.')
+p.write_text(s,encoding='utf-8')
+p=Path('@2026-congreso-musicologia/LEEME.md')
+s=p.read_text(encoding='utf-8').replace('## Identificación pendiente','## Identificación').replace('La segunda diapositiva reserva campos para nombre completo, afiliación, número o título del proyecto Fondecyt de Iniciación ANID y correo. Estos datos requieren confirmación del expositor. ANID se presenta como organismo de financiamiento y no se presupone una afiliación laboral.','La segunda diapositiva incluye los datos proporcionados por el expositor: Sebastian Matías Muñoz Tapia; ANID, Universidad Alberto Hurtado, CMUS; Fondecyt de Iniciación N.º 11260379; sebastianmunozt@gmail.com.')
+p.write_text(s,encoding='utf-8')

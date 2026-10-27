@@ -1,0 +1,1821 @@
+Networks, Categories, and
+Collaboration: The Emergence and
+Consolidation of Chilean Música
+Urbana
+
+A dissertation submitted to The University of Manchester for the degree of MSc Social
+Network Analysis in the Faculty of Humanities.
+
+                                                    2026
+
+                                Student ID: 14340176
+                                 Course: SOCY60000
+                              School of Social Science
+Table of contents
+
+Abstract................................................................................................................................... 4
+Declaration.............................................................................................................................. 4
+Intellectual Property Statement .............................................................................................. 4
+1. Introduction ........................................................................................................................ 5
+2. Theoretical Framework....................................................................................................... 7
+
+   2.1 Categories and Relations: Musical Assemblages, Social Identity, and Social Network
+   Analysis .............................................................................................................................. 7
+   2.2 Collaboration Networks and Music Worlds ............................................................... 10
+3. Research Background and Hypothesis Formulation ........................................................ 12
+   3.1 From Urban Contemporary to Chilean Música Urbana............................................. 12
+   3.2 Spotify, Collaboration and Platform Visibility........................................................... 14
+   3.3 Periodisation and Hypotheses..................................................................................... 15
+4. Data and Methods ............................................................................................................. 16
+   4.1 Data Sources and Extraction ...................................................................................... 16
+   4.2 Network Construction and Delimitation .................................................................... 17
+   4.3 Node Attribute Generation ......................................................................................... 18
+   4.4 Variable Operationalisation ........................................................................................ 19
+   4.5 Weighted Networks and Periodisation ....................................................................... 20
+   4.6 Network Scope ........................................................................................................... 21
+   4.7 Analytical Strategy ..................................................................................................... 21
+5. Results .............................................................................................................................. 23
+   5.1 Descriptive Analyses .................................................................................................. 23
+
+      5.1.1 Network Topology............................................................................................... 23
+      5.1.2 Node Attributes and Network Composition ........................................................ 26
+      5.1.3 Weighted Collaboration Patterns......................................................................... 29
+      5.1.4 Synthesis of Descriptive Findings ....................................................................... 30
+   5.2 Community Structure ................................................................................................. 30
+      5.2.1 Selecting the Community Solution...................................................................... 31
+      5.2.2 Structural Characterisation of Selected Leiden Communities............................. 34
+      5.2.3 Community Composition .................................................................................... 36
+      5.2.4 Historical and Theoretical Interpretation............................................................. 40
+   5.3 ERGM......................................................................................................................... 42
+      5.3.1 Binary ERGM Strategy ....................................................................................... 42
+
+                                                                                                             2
+      5.3.2 Model Specification............................................................................................. 43
+      5.3.3 Progressive Model Comparison .......................................................................... 43
+      5.3.4 Selected Model Diagnostics ................................................................................ 45
+      5.3.5 Closure Sensitivity Checks .................................................................................. 50
+      5.3.6 Substantive Interpretation.................................................................................... 51
+6. Discussion and Conclusion............................................................................................... 52
+   6.1 Methodological Limitations ....................................................................................... 56
+7. Abbreviations ................................................................................................................... 57
+8. Statements and Declarations............................................................................................. 57
+   8.1 Ethical Considerations ................................................................................................ 57
+   8.2 Declaration of Conflicting Interests ........................................................................... 57
+9. References ........................................................................................................................ 58
+Word count: 11,886 (excluding bibliography, tables, figure captions, and front
+matter)
+
+                                                                                                             3
+Abstract
+
+This dissertation examines how Chilean Música Urbana became relationally organised
+through Spotify-visible artist collaborations between 2014 and 2024. It compares two
+periods, formation and national consolidation (2014-February 2022) and boom and
+international expansion (March 2022-2024), using descriptive social network measures,
+weighted collaboration patterns, community detection, and binary exponential random graph
+models. The results show that the collaboration network expanded rapidly while becoming
+more structurally integrated, that collaboration remained unevenly distributed, and that
+communities were differentiated by generation, musical trajectory, country composition, and
+organisational position. The dissertation argues that Chilean Música Urbana should be
+understood not only as a genre label, but as a relationally organised music world shaped by
+platform visibility, generational differentiation, and selective internationalisation.
+
+Declaration
+
+This dissertation is my original work, except where otherwise clearly acknowledged and
+referenced.
+
+Intellectual Property Statement
+
+i. The author of this dissertation (including any appendices and/or schedules to this
+dissertation) owns certain copyright or related rights in it (the "Copyright") and they have
+given The University of Manchester certain rights to use such Copyright, including for
+administrative purposes.
+
+ii. Copies of this dissertation, either in full or in extracts and whether in hard or electronic
+copy, may be made only in accordance with the Copyright, Designs and Patents Act 1988 (as
+amended) and regulations issued under it or, where appropriate, in accordance with licensing
+agreements which the University has entered into. This page must form part of any such
+copies made.
+
+iii. The ownership of certain Copyright, patents, designs, trademarks and other intellectual
+property (the "Intellectual Property") and any reproductions of copyright works in the
+dissertation, for example graphs and tables ("Reproductions"), which may be described in
+this dissertation, may not be owned by the author and may be owned by third parties. Such
+Intellectual Property and Reproductions cannot and must not be made available for use
+without the prior written permission of the owner(s) of the relevant Intellectual Property
+and/or Reproductions.
+
+iv. Further information on the conditions under which disclosure, publication and
+commercialisation of this dissertation, the Copyright and any Intellectual Property and/or
+Reproductions described in it may take place is available in the University IP Policy, in any
+relevant Dissertation restriction declarations deposited in the University Library, and The
+University Library's regulations.
+
+                                                                                                             4
+1. Introduction
+
+Over the last decade, Música Urbana has become one of the most visible and commercially
+successful sectors of Latin American popular music (Muñoz-Tapia et al., 2025). Artists
+associated with the category have accumulated billions of streams, occupied prominent
+positions in digital rankings, and expanded their audiences across national borders. In Chile,
+this process accelerated during the early 2020s, when artists such as Cris Mj, Polimá
+Westcoast, Floyymenor, Pailita, Jere Klein, Paloma Mami and others achieved
+unprecedented levels of visibility both nationally and internationally. As a result, Música
+Urbana has become a central reference point for artists, audiences, media outlets, streaming
+platforms, and music industry actors.
+
+The term Música Urbana, or Género Urbano, is retained in Spanish rather than translated as
+urban music in order to preserve its situated meaning within Latin American musical
+contexts. In Chile and across the region, Música Urbana functions as an emic category that
+encompasses genres such as reggaetón, trap, dembow, mambo chileno, and rap, while also
+referring to broader cultural practices, identities, and forms of participation (Muñoz-Tapia et
+al., 2025; Muñoz-Tapia and Pinochet-Cobos, 2025). Although the category is now widely
+used, its meaning remains contested. Artists grouped under the label often differ in musical
+style, trajectories, audiences, and aesthetic references, raising questions about what connects
+them and how such a heterogeneous category acquires social coherence.
+
+Existing research has largely approached this question through the study of genres, cultural
+classifications, media discourse, platformisation, and the political economy of digital music
+(Muñoz-Tapia et al., 2025; Muñoz-Tapia and Pinochet-Cobos, 2025). These studies have
+shown that Música Urbana is neither a stable genre nor a simple continuation of earlier
+musical traditions. Rather, it emerged through processes of circulation, translation,
+categorisation, and institutional recognition that connected previously distinct musical
+practices. Building on Muñoz-Tapia and Pinochet-Cobos (2025), this dissertation takes the
+generational and categorical formation of Chilean Música Urbana as a starting point and asks
+how that category became relationally organised across time. The central contribution is
+therefore not to identify the generational divide itself, already described in previous research,
+
+                                                                                                             5
+but to examine how this categorical and generational transformation became organized
+through collaboration networks.
+
+This question is especially relevant in the context of streaming. As Hesmondhalgh (2025)
+argues, music streaming has produced ambivalent transformations. It has increased the
+international visibility of genres, scenes, and markets beyond the historical centres of the
+global music industry, particularly the United States and the United Kingdom, contributing
+to a more multipolar circulation of music. At the same time, this diversification has not
+eliminated structural inequalities. Platform ownership, digital infrastructures, algorithmic
+intermediation, and international intellectual property regimes continue to concentrate power
+within the global music economy. Chilean Música Urbana is a productive case for examining
+this tension: it has contributed to the formation of a relatively distinctive artistic world and
+local market, while remaining deeply articulated with transnational genres, international
+collaborations, platform-based visibility, and the commercial logics of streaming.
+
+This dissertation argues that collaboration networks provide a useful way of examining these
+processes. Collaborations are not merely technical arrangements for producing songs. They
+are also mechanisms through which artists gain visibility, access new audiences, establish
+reputations, and create connections across musical communities. In this sense, collaboration
+networks make it possible to observe how heterogeneous genres and artists become
+articulated into broader musical formations. Rather than focusing exclusively on discourse
+or classification, this study examines the relationships through which Música Urbana is
+enacted in practice.
+
+To do so, the dissertation analyses collaboration networks among artists associated with
+Chilean Música Urbana between 2014 and 2024 using data derived from Spotify metadata.
+The analysis compares two historical periods: a phase of formation and national
+consolidation (2014­February 2022) and a phase of boom and international expansion
+(March 2022­2024). Drawing on relational sociology, social network analysis, and research
+on music worlds, the study investigates how collaboration patterns changed between these
+periods as the scene expanded, became more structurally integrated, and internationalised
+selectively rather than uniformly.
+
+                                                                                                             6
+The dissertation addresses three research questions. First, how did the structure of
+collaboration networks change between the formation and national consolidation period and
+the boom and international expansion period? Second, to what extent did processes of
+internationalisation transform both the composition and relational structure of collaboration
+networks? Third, how were collaboration opportunities distributed among artists as the scene
+expanded in scale, visibility, and international reach?
+
+By addressing these questions, the dissertation contributes to research on music worlds,
+cultural classification, and digital cultural production. More broadly, it shows how social
+network analysis can be used to investigate the relational transformation of musical
+categories over time. In this case, the comparison between periods makes it possible to move
+from the question of categorical emergence to the question of how Música Urbana expanded,
+integrated, and internationalised as a collaboration network.
+
+2. Theoretical Framework
+
+2.1 Categories and Relations: Musical Assemblages, Social Identity,
+and Social Network Analysis
+
+Musical genre can be understood as a historically situated category that classifies musical
+practices while linking them to particular audiences, identities, institutions, and modes of
+circulation. Following Brackett (2016), genres do not possess fixed essences; they acquire
+meaning relationally, through their position within changing systems of musical difference.
+Brackett develops this argument through a reading of genealogical, citational, and dialogical
+approaches associated with Foucault (1977), Derrida (1988), and Bakhtin (1981), while also
+building on Fabbri's theory of musical genres as systems of conventions and diachronic
+processes (Fabbri, 1982, 2012). From this perspective, genres persist because works repeat,
+cite, and transform recognisable conventions over time. Genre is therefore not simply a label
+attached to sound, but a historically produced way of organising recognition.
+
+This approach links genre to a conception of assemblage. Brackett (2016) and Drott (2013)
+both understand genres as configurations of heterogeneous elements connected through
+
+                                                                                                             7
+relations of exteriority: sounds, images, performance styles, modes of dress, forms of speech,
+technologies, institutions, markets, media, and classificatory devices. A genre is therefore
+not reducible to musical style alone. It is an arrangement of sonic, social, institutional, and
+technological elements that can be reconfigured over time. This point is important for the
+present dissertation because networks of artist collaboration on songs can be considered part
+of a broader set of relations through which musical categories are produced and recognised.
+
+Musical categories also organise forms of identification. Brackett (2016), drawing on Born
+(2000, 2011), shows that genres become associated with social groups through historically
+contingent processes involving class, race, ethnicity, gender, generation, and market position.
+These associations are neither natural nor stable. They are produced through circulation,
+reception, media discourse, institutional classification, and artistic practice. Genre categories
+therefore help constitute musical publics: they provide names, expectations, and boundaries
+through which actors understand themselves and others. In this sense, musical categories are
+not merely descriptive; they are performative classifications that shape how cultural
+participation becomes socially intelligible.
+
+From another perspective, Social Network Analysis and relational sociology have also
+addressed the relationship between categories and relations. White's concept of catnets is
+central here. For White (2008), social formations emerge through the intersection of
+categorical identities and network ties. Categories allow actors to recognise one another as
+belonging to a shared formation, while relations provide the channels through which those
+categories circulate, stabilise, and become consequential. This framework is especially useful
+for studying musical worlds because artists may share a category without all being directly
+connected, and they may become connected in ways that subsequently reshape the meaning
+of the category itself.
+
+Building on White and Tilly, Crossley (2025a) develops this point by linking Social Network
+Analysis with Social Identity Theory. Social Identity Theory (Tajfel and Turner, 1979)
+explains how actors construct shared identities through categories, norms, and prototypes,
+and how these classifications orient perception, recognition, and affiliation. However, it tends
+to under-theorize the relational channels through which identities circulate and acquire
+durability. Social Network Analysis, by contrast, explains how homophily, closure,
+
+                                                                                                             8
+brokerage, diffusion, and network position structure interaction, but often gives less attention
+to the symbolic categories through which actors interpret those relations. Crossley's
+contribution is to bring these two perspectives together.
+
+From this perspective, categories and networks are mutually constitutive. Categories
+circulate through networks and become socially effective when they are recognized, shared,
+and enacted by connected actors. At the same time, categories shape networks by guiding
+affiliation, recognition, in-group preference, and expectations about appropriate ties. Actors
+do not collaborate only because they occupy positions in a structure; they also interpret one
+another through categories that make some collaborations more thinkable, legitimate, or
+desirable than others. Conversely, repeated relations can reinforce, modify, or destabilize the
+categories through which actors understand the field. This retroactive relation between
+categories and ties is central to the dissertation's argument.
+
+Social Network Analysis therefore provides a methodological strategy for examining one
+dimension of this process. It does not explain musical categories on its own, nor does it
+reduce genres to networks. Its contribution lies in making relational configurations visible:
+who collaborates with whom, how ties are distributed, which actors occupy central or
+peripheral positions, how clusters form, and whether collaboration follows patterns of
+generational proximity, national boundary-making, or categorical similarity. These patterns
+require historical and cultural interpretation, but they provide empirical evidence about how
+categories become organized through relations.
+
+This is important considering the ambiguity and fluidity of a category such as música urbana.
+In that sense, the notion of hypergenre is useful for understanding categories that gather
+heterogeneous musical forms without eliminating internal differences. Buch's work on
+hypergenre describes broad musical categories that organise diverse practices under a shared
+classificatory umbrella (Buch, 2013, 2018). Música Urbana can be approached in these
+terms. Rather than naming a bounded genre, it operates as a glocal hypergenre that connects
+rap, trap, reggaeton, dembow, mambo chileno, RKT, and other local or transnational variants
+(Muñoz-Tapia et al., 2025). Its coherence does not depend on a single musical essence, but
+on the capacity of the category to connect heterogeneous sounds, actors, scenes, markets, and
+infrastructures.
+
+                                                                                                             9
+Previous historical and ethnographic research on Chilean Música Urbana has shown that the
+category emerged through interactions among artists, media, platforms, audiences, industry
+actors, local scenes, and global tendencies (Muñoz-Tapia et al., 2025; Muñoz-Tapia and
+Pinochet-Cobos, 2025). This earlier work adopted a perspective close to assemblage
+approaches by reconstructing the historical formation of Música Urbana as a category and
+identifying the meanings, tensions, and divisions that structure the Chilean case. In particular,
+it highlighted the importance of generational differentiation between historical rap
+trajectories and younger urbano formations. The present dissertation builds on that
+interpretation but shifts the empirical focus toward artist collaboration on songs,
+operationalised as Spotify-visible co-presence among credited performers on the same track.
+It examines how those historically identified divisions are organised relationally, while also
+incorporating additional attributes such as internationalisation, gender, artist type, and
+record-label position.
+
+In this dissertation, Música Urbana is therefore analysed simultaneously as a category and
+as a relational formation. The category provides a historically situated framework of
+recognition, while networks of artist collaboration on songs reveal how performers associated
+with and around that category became connected across time. This approach allows the
+dissertation to examine how Chilean Música Urbana was not only named, narrated, or
+classified, but also enacted through credited collaboration. The central question is not
+whether Música Urbana is a "real" genre in a bounded stylistic sense, but how it became
+socially effective as a category through patterned relations that sustained, expanded, and
+differentiated it.
+
+2.2 Collaboration Networks and Music Worlds
+
+Scholars working on music, cultural production, and collaboration have consistently
+emphasised that music is a collective activity rather than the product of isolated creators.
+Small's (1998) concept of musicking treats music as a relational activity involving
+performers, listeners, mediators, and facilitators, while Becker's (2008) theory of art worlds
+understands artistic production as a cooperative system coordinated through conventions
+among creators, technicians, distributors, critics, and audiences. Farrell's (2001) notion of
+
+                                                                                                            10
+collaborative circles similarly highlights how sustained peer interaction can generate
+innovation and mutual influence.
+
+Crossley develops this argument through the concept of music worlds (Crossley, 2009, 2015,
+2020, 2025b; Crossley et al., 2015). Music worlds are relational formations in which musical
+practices are produced, circulated, and sustained. His contribution is both theoretical and
+methodological: collaborations, shared spaces, reputations, and recurrent interactions
+generate the relational infrastructure through which scenes emerge and endure. Social
+network analysis therefore complements sociohistorical interpretation by allowing
+researchers to identify the structures through which music worlds acquire coherence.
+
+Research on music networks shows that collaboration is not merely a technical arrangement
+for producing songs. It is also a mechanism through which music worlds are formed, scenes
+acquire cohesion, and categories become socially credible. Kirschbaum and Carvalho de
+Vasconcelos (2007) analyse Tropicalia as the outcome of strategic connections across
+previously separated musical communities, while Hammou (2009) shows that French rap
+developed as a professional social world through a cohesive network of featuring
+collaborations. Similarly, Grubesic et al. (2024) demonstrate that Yacht Rock depended upon
+an interconnected network of musicians embedded within the social and spatial infrastructure
+of Los Angeles.
+
+Collaboration networks also influence artistic careers and forms of visibility. Network
+position may affect artistic success (Silva et al., 2019), increase future streaming visibility
+(Deshmane and Martinez-de-Albeniz, 2020), and generate reputational associations among
+artists and composers (Braden et al., 2024). Network evolution also matters: Bagley et al.
+(2022) identify processes of fragmentation and recombination in musical collaboration
+networks, while Xu et al. (2025) show that social ties can expand the range of musical
+preferences available to individuals.
+
+A further contribution of this literature concerns the relationship between local and external
+ties. Makkonen (2017) argues that local networks generate opportunities and support career
+development, whereas external connections are often more important for broader visibility
+and international projection. Similarly, Diani and Sacchetti (2023) show that artistic vitality
+tends to increase when musicians combine local embeddedness with external connections.
+
+                                                                                                            11
+This distinction is central for the present study because the question is not only whether
+Chilean Música Urbana expanded, but also whether its collaboration structure became more
+internationally connected.
+
+Digitalisation has transformed these relational dynamics. According to Makelberge (2012),
+technological changes in production infrastructures modify the conditions of collaboration
+by enabling creative interaction beyond shared physical spaces. In contemporary music
+worlds, collaborations increasingly occur through mediated environments in which digital
+platforms, metadata, and visibility metrics become part of the relational process itself.
+
+The featuring is therefore a particularly useful relation for studying Música Urbana. Unlike
+friendship, influence, or informal cooperation, featured collaborations are public, credited,
+platform-visible, and cumulative. They create observable traces of association between artists
+that can be systematically reconstructed through digital metadata. While featuring
+collaborations do not capture the full social life of musical production, they provide a
+meaningful relational layer through which patterns of cooperation, recognition, and visibility
+become empirically observable.
+
+3. Research Background and Hypothesis Formulation
+
+3.1 From Urban Contemporary to Chilean Música Urbana
+
+The emergence of Música Urbana in Chile forms part of broader transformations in the
+categorisation of popular music. One important antecedent is Urban Contemporary, which
+emerged in the United States during the 1970s and 1980s as a radio and industry classification
+grouping diverse forms of Black popular music (Hammou, 2023; Muñoz-Tapia et al., 2025).
+A related process occurred within Latin music industries, where labels such as urban, Latin
+urban, reggaeton, and Latin rap became associated through shared markets, media circuits,
+and cultural imaginaries (Rivera-Rideau, 2015). These categories did not describe unified
+musical styles. Rather, they assembled heterogeneous genres through infrastructures of
+circulation, audiences, and institutional classification.
+
+                                                                                                            12
+This dissertation approaches Música Urbana in Chile as a situated category related to, but
+not identical with, those classifications. Categories such as Urban Contemporary, hurban,
+Latin Urban, and Música Urbana function as false friends: they appear equivalent because
+they share labels, references, and classificatory functions, while in practice organising
+different musical worlds and historical trajectories (Muñoz-Tapia et al., 2025). At the same
+time, they reveal elective affinities among heterogeneous genres such as rap, reggaeton, trap,
+dembow, mambo chileno, and RKT. These affinities are not only musical but also social,
+since urban categories have frequently grouped cultural expressions associated with
+racialised populations, working-class sectors, migrants, Indigenous peoples, and ethnic
+minorities. They do not eliminate difference; rather, they create conditions under which
+diverse musical practices can be recognised as part of a broader cultural formation.
+
+The Chilean case reflects these broader dynamics while following its own historical
+trajectory. Since the late 1980s and early 1990s, Hip Hop scenes established local
+infrastructures of production, circulation, and artistic socialisation, contributing to
+independent forms of cultural production that later shaped the emergence of urban genres
+(Muñoz-Tapia and Pinochet-Cobos, 2025). Contemporary Música Urbana, however, cannot
+be reduced to a continuation of Chilean rap. During the 2010s, digital production
+technologies, social media, streaming platforms, and digital distribution services facilitated
+the growth of trap, reggaeton, mambo chileno, and related genres among younger
+generations. By the early 2020s, Música Urbana had become a widely recognised category
+capable of grouping these heterogeneous trajectories under a common label (Muñoz-Tapia
+et al., 2025; Muñoz-Tapia and Pinochet-Cobos, 2025).
+
+At the same time, Música Urbana maintained a complex relationship with rap. In Chile and
+much of Latin America, rap has traditionally been associated with Hip Hop culture, boom
+bap aesthetics, and underground scenes (Muñoz-Tapia and Pinochet-Cobos, 2025). Unlike
+the United States, where rap or Hip Hop often function as broader categories that encompass
+styles such as trap, Música Urbana in Latin America and Spain emerged as a wider umbrella
+that groups rap alongside genres with distinct trajectories, including reggaeton, trap, and
+dembow. Within this configuration, reggaeton has played a particularly important role in
+
+                                                                                                            13
+articulating connections between otherwise heterogeneous genres and audiences within the
+broader metageneric structure of Música Urbana (Arias Salvado, 2025).
+
+Rather than examining this process through discourse alone, this dissertation analyses the
+collaboration networks through which these connections were enacted. If Música Urbana
+emerged through the articulation of heterogeneous musical traditions, collaboration networks
+provide a way to examine how those articulations became structured over time.
+
+3.2 Spotify, Collaboration and Platform Visibility
+
+Spotify occupies a central position in this study because it functions simultaneously as a
+platform for music circulation and as a source of relational data. This is particularly relevant
+for Chilean Música Urbana, whose expansion has been closely associated with streaming
+platforms, social media, digital distributors, and platform-mediated forms of visibility.
+
+This role should be situated within broader processes of digital transformation. A first phase
+was characterised by disintermediation, as home studios, MP3 technologies, websites, blogs,
+peer-to-peer systems, and social media reduced barriers to recording, distribution, and
+promotion, allowing artists to circulate music outside traditional industry structures
+(Albornoz, 2011; Buquet, 2003; Fouce, 2012; Gallo and Semán, 2016; Leyshon, 2001). In
+Chile, these developments coincided with the consolidation of rap as a largely underground
+and independent musical world (Muñoz-Tapia and Pinochet-Cobos, 2023, 2025).
+
+A second phase emerged with the rise of digital streaming platforms. Rather than eliminating
+intermediaries, digitalisation created new forms of reintermediation, in which distributors,
+playlists, recommendation systems, metrics, algorithms, and major labels became central to
+organising visibility and audience reach (Lamacchia, 2016; Leyshon, 2001; Negus, 2019;
+Prey, 2016). Spotify is therefore not simply a distribution channel but part of a broader
+ecosystem through which artistic visibility and commercial value are organised.
+
+For the purposes of this dissertation, Spotify is important not only as an industry actor but
+also as an empirical source. Track-level collaborations constitute public, credited, and
+platform-visible relations between artists. Although they do not capture the full range of
+creative and organisational relationships involved in music production, they provide
+
+                                                                                                            14
+observable traces of artistic association that can be systematically reconstructed through
+metadata.
+
+3.3 Periodisation and Hypotheses
+
+This dissertation examines collaboration networks during a period of rapid transformation in
+Chilean Música Urbana. To capture these changes, the analysis distinguishes between two
+historical phases. The first, Formation and National Consolidation (January 2014­February
+2022), corresponds to the emergence and consolidation of Música Urbana as a recognisable
+category within Chile. During this period, artists associated with rap, trap, reggaeton, and
+related genres increasingly interacted through collaborations, digital platforms, and shared
+audiences.
+
+The second phase, Boom and International Expansion (March 2022­December 2024),
+corresponds to a period of accelerated growth and transnational visibility. This period was
+marked by the international success of Chilean artists, increased presence in global streaming
+rankings, growing industry attention, and more collaborations with foreign artists. Songs
+such as Una Noche en Medellín1 and Ultra Solo2 became emblematic of this broader
+transformation.
+
+The distinction between these periods should be understood as an analytical device rather
+than a rigid historical rupture. Processes of internationalisation were already present before
+2022, while domestic collaborations remained important afterwards. Nevertheless, the
+periodisation captures an important shift in the scale, visibility, and geographical reach of the
+scene.
+Four hypotheses guide the empirical analysis.
+
+H1. Network Expansion
+
+1 See: https://www.youtube.com/watch?v=EaIh7tRqdqM&list=RDEaIh7tRqdqM&start_radio=1
+2 See: https://www.youtube.com/watch?v=Mub403hj9nE&list=RDMub403hj9nE&start_radio=1
+
+                                                                                                            15
+The boom and international expansion period will contain larger collaboration networks,
+characterised by a greater number of artists and collaborations and by stronger component-
+level integration.
+
+H2. Internationalization
+
+The boom and international expansion period will contain a greater proportion of foreign
+artists and a larger number of cross-national collaborations, although these ties may remain
+selectively concentrated rather than generalised across the whole network.
+
+H3. Tie Intensification
+
+The boom and international expansion period will contain a higher proportion of recurrent
+collaborations, reflecting the consolidation of collaborative relationships within the scene.
+
+H4. Uneven Collaboration Participation
+
+Despite overall expansion, collaborations will remain unevenly distributed, with a minority
+of artists accumulating substantially more ties while many artists enter the network through
+only one or a few collaboration partners.
+
+These hypotheses treat changes in network structure as indicators of broader transformations
+in the organisation of Chilean Música Urbana. The following section describes the data
+sources, network construction procedures, and analytical strategies used to evaluate these
+expectations.
+
+4. Data and Methods
+
+4.1 Data Sources and Extraction
+
+The collaboration networks were constructed from a larger database of Chilean musicians
+and their Spotify-visible collaborations. Data collection combined two complementary
+sources. The primary source was the Spotify Web API, accessed through the Spotipy Python
+library using Spotify's Client Credentials workflow. The extraction retrieved artist metadata,
+releases, tracks, credited performers, and release dates. Historical information on tracks
+
+                                                                                                            16
+appearing in the Spotify Top 200 chart for Chile was retrieved from Kworb and used as
+complementary evidence of platform visibility and ranking presence.
+
+The Spotify extraction began from manually curated playlists focused on Chilean music,
+which were screened to retain lists composed of Chilean artists and used as seed lists for
+identifying national performers. From this seed set, the Python pipeline retrieved artist
+identifiers and metadata, queried releases, and extracted track-level performer credits.
+
+Collaborations were generated at the track level. Whenever a Spotify track listed more than
+one credited performer, all unordered artist pairs among those performers were created. Each
+collaboration record therefore contains two Spotify artist identifiers, a Spotify track
+identifier, and the release date. The resulting networks capture public, credited co-presence
+on Spotify releases rather than songwriting, production, management, friendship, or live-
+performance relationships. Because the data indicate joint participation on a track, the
+networks are undirected.
+
+The extracted files should be understood as historical source data rather than as a
+continuously updated representation of Spotify. Platform metadata can change over time, and
+the original API responses were not archived as immutable snapshots. The repository
+preserves the extracted collaboration tables and processing logic used in this dissertation, but
+it cannot reconstruct later changes made by Spotify to artist profiles, genre labels, release
+credits, or follower counts.
+
+4.2 Network Construction and Delimitation
+
+The initial collaboration database spans multiple genres, scenes, and historical trajectories.
+Rather than beginning with a fixed list of artists, the network was delimited around a broad
+Chilean Música Urbana seed category while preserving relevant ties to adjacent musical
+fields and international collaborators. This approach reflects the assumption that Música
+Urbana is best studied as a relational, historically situated category rather than a fixed
+stylistic genre.
+
+Network delimitation proceeded in three steps. First, Spotify's genre metadata provided an
+inclusive automated screening. Artists were initially coded as potential Música Urbana cases
+
+                                                                                                            17
+when their genre field contained at least one of the following terms: reggaeton, hip hop, trap,
+rap, mambo, urbana, urbano, neoperreo, r&b, guaracha, dancehall, rkt, neo soul, acid jazz, or
+dembow. These labels were used only to construct the initial candidate universe, not as
+definitive genre categories.
+
+Second, we reviewed the preliminary classification artist by artist. Spotify's platform labels
+were not treated as definitive because they inconsistently combine stylistic descriptions,
+national scenes, commercial categories, and algorithmically generated associations. Manual
+validation drew on previous research on Música Urbana and related musical genealogies in
+Chile, together with contextual knowledge of artist trajectories, repertoires, collaborations,
+and public positioning. This procedure allowed artists omitted or ambiguously classified by
+Spotify to be included while removing false positives generated by the broad keyword search.
+
+Third, the manually validated Chilean Música Urbana seed was expanded one step outward.
+To enter the analytic network, Chilean seed artists had to participate in at least one retained
+Spotify collaboration released between 1 January 2014 and 31 December 2024. Tracks
+released outside this observation window were not counted. Foreign artists and non-urban
+artists were retained whenever they collaborated directly with the Chilean Música Urbana
+seed during the same period.
+
+Nodes represent credited performers appearing on Spotify releases and include both solo
+artists and artistic groups or collectives. The final analytic network excludes entities that
+primarily operate as record labels, imprints, distributors, publishing companies, studios,
+booking agencies, or service brands. It also excludes duplicate collective accounts when
+including them would reproduce collaborations already represented by individual members.
+Before constructing the final networks, the manually validated artist database was restricted
+to profiles with more than 1,000 Spotify followers. These exclusions delimited the network;
+the subsequent analysis examines how artists classified within and beyond this boundary are
+connected through Spotify-visible collaborations.
+
+4.3 Node Attribute Generation
+
+Node attributes were generated through a two-stage process. First, the Spotify Web API
+provided artist identifiers and platform metadata, including follower counts, popularity
+
+                                                                                                            18
+scores, and Spotify genre labels. Because Spotify does not provide standardised historical or
+biographical information, the database was subsequently enriched through an AI-assisted
+information retrieval workflow using Google's Gemini Flash 2.0 language model with web
+search. This workflow retrieved publicly available information on artist trajectories, places
+of origin and artistic formation, debut releases, career milestones, record-label affiliations,
+gender, and group membership composition.
+
+The AI-assisted stage was used for retrieval and organisation rather than for final
+classification. Each extracted attribute was accompanied by a confidence rating and
+supporting sources when available. Final coding decisions were manually reviewed,
+corrected, and harmonised before inclusion in the analytical database.
+
+4.4 Variable Operationalisation
+
+The validated information was transformed into analytical variables suitable for network
+analysis. The principal node attributes used in the descriptive and modelling analyses are
+country, artist type, gender, record-label affiliation, and generation. The broad Música
+Urbana classification was used primarily to delimit the analytical network, while the network
+analyses examine the relational patterns produced by collaboration ties.
+
+Generation was operationalised from the year of professional musical inception. For
+descriptive and community analyses, this year was grouped into cohorts: decade-based
+categories for artists beginning before 2000 and five-year intervals from 2000 onward. For
+ERGM models, the same inception year was used as a continuous attribute, centred within
+each period, in order to estimate the effect of temporal proximity between artists. When the
+inception year could not be established, we used the release year of the earliest Spotify track
+as a proxy. Record-label affiliation was classified into hierarchical categories distinguishing
+major labels, major subsidiaries, independent labels, and cases without an identifiable label.
+When artists were affiliated with more than one label type within the same observation
+period, the highest-ranking category was retained. For groups and collectives, gender was
+operationalised according to membership composition and subsequently harmonised into
+broader analytical categories where appropriate.
+
+                                                                                                            19
+4.5 Weighted Networks and Periodisation
+
+The networks are initially weighted. For each period, artist identifiers were converted into
+canonical unordered pairs, so that (A)-(B) and (B)-(A) represented the same dyad. Track-
+level records were then deduplicated using the combination of unordered dyad and Spotify
+track identifier. This prevents repeated extraction of the same track from inflating
+collaboration frequencies while preserving different tracks credited to the same pair. After
+canonicalization and deduplication, the final edge lists contain no self-loops, reverse-
+orientation duplicates, or repeated dyads.
+
+The raw weight of a tie equals the number of unique retained Spotify tracks on which two
+artists were jointly credited during a given period. Because collaboration frequencies are
+strongly right-skewed, raw counts were also recoded into three ordered categories: 1 =
+sporadic for one collaboration, 2 = weak recurrent for two collaborations, and 3 =
+recurrent/strong for three or more collaborations. This ordinal measure is used in the
+descriptive analysis of collaboration intensity, the network visualisations, and the community
+detection analysis. It preserves meaningful differences between one-time and recurrent
+collaborations while reducing the influence of a small number of highly prolific dyads.
+
+For the ERGM analysis, the networks were further dichotomised. The main ERGM
+specification models whether at least one collaboration exists between two artists within a
+period. This binary strategy was selected because the valued and ordinal ERGM
+specifications were less stable for the dissertation's comparative modelling purposes. The
+weighted and ordinal measures are therefore retained for descriptive and community
+analyses, while the ERGM focuses on the presence or absence of collaboration ties.
+
+Separate networks were constructed for each historical period. Collaborations were assigned
+to periods according to track release date, allowing comparison between the Formation and
+National Consolidation period (2014-February 2022) and the Boom and International
+Expansion period (March 2022-2024). The two networks are non-cumulative: collaborations
+observed in the first period are not automatically carried into the second period. Tracks with
+incomplete calendar dates were excluded in order to apply a uniform date-quality rule.
+
+                                                                                                            20
+4.6 Network Scope
+
+Tables 1A and 1B summarise the main stages of node and dyad delimitation. A node may be
+removed because it is absent from the manually validated artist database, lacks valid country
+or artist-type information, falls outside the permitted working categories, was manually
+excluded as an organisational or redundant profile, or has no direct retained collaboration
+with the Chilean Música Urbana seed during the relevant period. Foreign Música Urbana
+and non-urban artists remain in the final networks when they collaborate directly with the
+Chilean seed.
+
+Table 1A. Node delimitation after final filtering.
+
+Period                  Initial nodes  Matched validated profiles  Eligible profiles  Final nodes  Retained
+
+Formation and national      840                       474                 438            213       25.4%
+consolidation
+                          1432                        876                803          564 39.4%
+Boom and international
+expansion
+
+Table 1B. Dyad delimitation after final filtering.
+
+Period                                 Initial edges  Final edges Edges removed Retained
+                                              1425
+Formation and national                                             410                1015 28.8%
+consolidation                                 3592
+Boom and international expansion                                   1579               2013 44.0%
+
+The scope tables are included to document the boundary-making procedure. Substantive
+comparisons of network size, connectivity, composition, and tie intensity are presented in the
+Results section.
+
+4.7 Analytical Strategy
+
+Although this dissertation relies primarily on quantitative network data, the analytical
+strategy is informed by previous historical and ethnographic research on the emergence of
+Chilean Música Urbana (Muñoz-Tapia and Pinochet-Cobos, 2025). That work helps identify
+the meanings, categories, and divisions sociologically relevant to interpreting the network
+results, especially the generational distinction between historical rap trajectories and younger
+urbano formations. In this sense, the study follows a mixed-methods logic rather than a fully
+independent mixed-methods design: qualitative knowledge derived from interviews,
+
+                                                                                                            21
+participant observation, and historical reconstruction informs the construction and
+interpretation of quantitative network evidence (Domínguez and Hollstein, 2011).
+All analyses were conducted in R using RStudio. Data cleaning, recoding, and table
+construction were carried out mainly with tidyverse packages, including dplyr, tidyr, readr,
+and stringr. Network objects and structural measures were produced using igraph, tidygraph,
+and network, while visualisations were generated with ggplot2, ggraph, and related plotting
+tools. Community detection was implemented through modularity-based algorithms, with
+particular attention to the Leiden solution, which was selected for its interpretable and stable
+meso-level clusters. ERGM models were estimated using the ergm and statnet framework,
+while goodness-of-fit and diagnostic procedures drew on ergm, btergm, and associated
+simulation tools. The dissertation was written and rendered with Quarto, allowing text, code,
+tables, and figures to be integrated in a reproducible workflow.
+The analytical strategy proceeds in three stages. First, descriptive statistics compare the two
+period-specific networks in terms of size, density, degree distribution, connected
+components, centralisation, transitivity, and weighted collaboration intensity. These
+measures establish whether the network expanded, became more integrated, and changed in
+the distribution of collaboration activity. Second, community detection identifies meso-level
+collaboration clusters and examines how these clusters differ by generation, country
+composition, gender, artist type, label affiliation, and collaboration intensity. Third, binary
+ERGMs are used to evaluate whether selected structural and attribute-based mechanisms are
+associated with the probability of collaboration ties. The ERGM results are interpreted
+cautiously, not as causal explanations, but as formal tests of relational patterns suggested by
+the descriptive and community analyses.
+
+                                                                                                            22
+5. Results
+
+5.1 Descriptive Analyses3
+
+The results first describe changes in the topology, composition, and tie intensity of the
+Spotify-visible collaboration network. These descriptive analyses establish the structural
+context for the subsequent community detection and ERGM analyses.
+
+5.1.1 Network Topology
+
+The first comparison asks how the network's global structure changed between periods.
+Tables 2A and 2B report binary network statistics, whereas Tables 3A and 3B summarise
+weighted measures of collaboration intensity, concentration, and closure.
+
+Table 2A. Network size and connectivity by period.
+
+Period     Nodes  Edges             Density  Components     Largest component              Largest component share
+             213    410            0.01816               9                  191            89.7%
+Formation    564                   0.00995               8                  545            96.6%
+Boom              1579
+
+Table 2B. Degree distribution and closure by period.
+
+Period     Mean degree             Median degree       Maximum degree        Degree centralization      Transitivity
+Formation            3.85                          2                     27                     0.110          0.332
+Boom                 5.60                          2                     55                     0.088          0.233
+
+Table 3A. Weighted collaboration intensity by period.
+
+Period     Total collaborations    Mean raw            Maximum raw           Mean ordinal strength      Maximum ordinal
+                              605    strength                  strength                           4.74              strength
+Formati                                  5.68                                                                             40
+on                           2430                                    66
+                                         8.62                                                                             89
+Boom                                                        103                            7.50
+
+Table 3B. Weighted concentration and closure by period.
+
+Period            Ordinal-strength centralization           Raw weighted transitivity                   Ordinal weighted transitivity
+Formation                                       0.070                               0.326                                           0.321
+Boom                                            0.039                               0.405                                           0.401
+
+3 Code and supplementary materials are available at: https://github.com/sebastianmunozt/mu-ch
+
+                                                                                                            23
+The Spotify-visible collaboration network expanded substantially. The number of artists
+increased from 213 to 564, while unique collaboration ties grew from 410 to 1,579. Total
+credited track collaborations increased from 605 to 2,430. Because the observation windows
+differ in length and platform visibility likely changed over time, these figures should be
+interpreted as descriptive network sizes rather than directly comparable rates or complete
+population estimates.
+
+This growth was accompanied by greater structural integration. Mean degree increased from
+3.85 to 5.60, while the median degree remained constant at two. The combination of a stable
+median with rising maximum degree and strength indicates increasing heterogeneity in
+collaboration activity. At the same time, degree centralisation declined from 0.110 to 0.088
+and ordinal-strength centralisation declined from 0.070 to 0.039, suggesting that growth did
+not increase dependence on a single dominant actor.
+
+The network also became less dense but more connected. Density declined from 0.0182 to
+0.0100, while the largest connected component increased from 191 to 545 artists and from
+89.7% to 96.6% of each network. Thus, a larger share of artists became connected within the
+same component even though a smaller fraction of all possible ties was realised.
+
+Closure changed in different directions depending on whether ties are treated as binary or
+weighted. Binary transitivity decreased from 0.332 to 0.233, indicating fewer closed triangles
+relative to connected triples. In contrast, weighted transitivity increased using both raw
+counts and ordinal weights. The network therefore did not become more closed in the binary
+sense; rather, the closed local configurations that remained were characterised by greater
+collaboration intensity.
+
+Figures 1 and 2 provide a visual summary of these changes. Node colour indicates country,
+node size is proportional to degree, and edge width and transparency indicate ordinal
+collaboration intensity. The first-period network appears organised around a smaller set of
+highly connected artists, whereas the second-period network displays a larger connected
+structure with more high-degree nodes and many peripheral artists attached through one or
+few ties. These layouts are descriptive rather than formal evidence of meso-level clustering,
+but they are consistent with the tabular results.
+
+                                                                                                            24
+Figure 1. Collaboration network during the formation and national consolidation period.
+Node size is proportional to degree, defined as the number of distinct collaboration
+partners.
+
+                                                                                                            25
+Figure 2. Collaboration network during the boom and international expansion period.
+Node size is proportional to degree, defined as the number of distinct collaboration
+partners.
+
+5.1.2 Node Attributes and Network Composition
+
+Figures 3 and 4 describe who participated in the collaboration network in each period. The
+comparison focuses on country, artist type, gender, label affiliation, and generation.
+
+                                                                                                            26
+Figure 3. Node composition by period and attribute.
+                                                                                                            27
+Figure 4. Node generation by period.
+The most pronounced compositional change concerns country. Chilean artists remained the
+majority in both periods, but the foreign share increased from 21.2% to 38.9%. Solo artists
+also became more prevalent, increasing from 88.7% to 92.4% of nodes, while the relative
+presence of groups declined.
+
+Gender composition changed little. Male artists accounted for nearly 88% of the network in
+both periods, while female or mixed-band artists represented approximately 12%. One non-
+binary artist appeared in the second period. This stability should be read against the strongly
+masculinised composition of both networks.
+
+Label affiliation and year of inception changed more substantially. Independent artists
+remained the largest label category, but their share declined from 64.3% to 44.3%, while
+artists without an identifiable label increased from 17.4% to 42.6%. The proportion
+associated with major labels decreased slightly.
+
+The distribution by year of inception also differs across periods, with a larger presence of
+artists beginning between 2020 and 2024 in the second period. This is partly expected given
+
+                                                                                                            28
+the dataset's temporal structure, since the later period includes years when newer artists could
+enter the network. However, it remains analytically relevant because it indicates that the
+boom and international expansion period includes not only previously established artists, but
+also a large cohort of recently emerging artists participating in Spotify-visible collaborations.
+
+5.1.3 Weighted Collaboration Patterns
+
+Figure 5 summarises the relative distribution of collaboration intensity across periods. In both
+periods, most observed collaborations were one-off ties, indicating that occasional
+collaborations remained the predominant form of artistic interaction. However, the later
+network also shows a larger proportion of recurrent collaborations. The share of recurrent
+dyads increased from 17.6% to 25.1%, while recurrent or strong collaborations increased
+from 5.6% to 8.9%.
+
+Figure 5. Relative distribution of ordinal collaboration weights by period.
+The distribution indicates that network growth was not limited to adding new one-off ties.
+Sporadic collaborations remained dominant, but repeated collaborations became more
+common, suggesting greater continuity in a subset of collaborative relationships.
+
+                                                                                                            29
+5.1.4 Synthesis of Descriptive Findings
+
+Taken together, the descriptive analyses indicate that the Spotify-visible collaboration
+network of Chilean Música Urbana underwent a substantial structural transformation
+between the two periods. The network grew rapidly in size, but this growth was accompanied
+by greater component-level integration rather than fragmentation. Collaboration activity also
+became more heterogeneous: most artists continued to have few partners, while a smaller set
+accumulated more ties and stronger collaboration intensity. Closure followed a dual pattern:
+binary transitivity declined, whereas weighted transitivity increased, indicating stronger
+cohesion within the closed configurations that remained. The participating population also
+changed, with a larger foreign share, more varied label affiliations, and a greater presence of
+artists whose trajectories began in recent years. Overall, the shift from formation and national
+consolidation to boom and international expansion involved broader participation, stronger
+integration, and persistent local intensity.
+
+These descriptive patterns also inform the following analytical stages. The combination of
+lower density, larger connected components, and declining centralisation suggests that
+expansion did not simply produce a larger version of the first-period network, but a more
+integrated structure that remained heterogeneous. This motivates the community detection
+analysis, which examines whether this heterogeneity is organised into meso-level
+collaboration clusters. At the same time, the stable median degree, rising maximum degree,
+and increasing collaboration intensity indicate that tie formation is unevenly distributed
+across artists, while the contrast between declining binary transitivity and increasing
+weighted transitivity suggests that local cohesion is associated with stronger recurrent ties.
+These patterns also motivate the ERGM strategy, which evaluates whether generational
+proximity, Chile-Foreign collaboration, categorical similarity, and low-degree participation
+are associated with the presence of collaboration ties across the two periods.
+
+5.2 Community Structure
+
+Community detection examines the meso-level organisation of the Spotify-visible
+collaboration network. Whereas the previous section showed that the network expanded and
+became more structurally integrated, this section asks how that increasingly connected
+
+                                                                                                            30
+collaboration space is internally organised. The analysis bridges descriptive network
+statistics and the ERGM models by identifying the main collaboration clusters that require
+interpretation before modelling tie formation.
+
+The analysis is restricted to the largest connected component of each period. This makes
+community structure comparable across periods and avoids treating disconnected peripheral
+groups as substantive communities. Leiden is used as the main specification because it is
+designed to identify well-connected communities and is less prone than Louvain to producing
+internally disconnected clusters. Louvain is estimated as a robustness check during model
+selection. For this reason, the substantive interpretation focuses on the selected Leiden
+partitions.
+
+Formally, the selected Leiden solutions optimise weighted modularity. For a partition c,
+modularity can be written in simplified form as:
+
+Q = (1 / 2m)  [ w -  (k k / 2m) ] (c, c)
+where w is the ordinal collaboration weight between artists i and j, k and k are their
+weighted degrees, m is the total edge weight,  is the resolution parameter, and (c, c) equals
+one when two artists are assigned to the same community and zero otherwise. In this
+dissertation, the procedure identifies groups of artists with more and stronger internal
+collaborations than would be expected from their weighted connectivity alone.
+
+5.2.1 Selecting the Community Solution
+
+The number of communities was evaluated rather than fixed in advance. For each period and
+method, we estimated repeated partitions across a common grid of resolution parameters and
+random seeds. We retained only candidate partitions containing between three and twelve
+communities. The selection procedure compared modularity, stability across runs,
+community-size balance, and interpretability. The objective was not to maximise modularity
+mechanically, but to identify a solution that preserved empirical fit without unnecessary
+fragmentation.
+
+The first diagnostic uses the best modularity observed for each value of (k). It shows where
+modularity peaks and whether gains flatten as additional communities are introduced.
+
+                                                                                                            31
+Figure 6A. Modularity curves by period, method, and number of communities.
+The second diagnostic uses every retained candidate solution. Narrow boxes indicate stable
+modularity across resolutions and random seeds, whereas wide boxes indicate that the quality
+of a given (k) depends more strongly on the particular run.
+
+                                                                                                            32
+Figure 6B. Distribution of modularity across candidate community solutions.
+The full community-size vectors for each candidate value of (k) were exported for audit
+purposes but are not reported in the main text. The selection is summarised below using the
+diagnostic curves, boxplots, and final selected solutions.
+
+The final selection combines modularity with parsimony and community-size balance. Seven
+communities are retained for the Formation and National Consolidation period, while eight
+communities are retained for the Boom and International Expansion period. In the first
+period, both methods identify a stable, interpretable partition with seven communities. In the
+second, modularity rises from seven to eight communities and then enters a region of
+diminishing returns: for Leiden, the increase from (k=8) to (k=9) is below 0.01, and Louvain
+shows the same pattern. The agreement across methods indicates that the selected number of
+communities is not an artefact of a single algorithm. The selected Leiden solutions also avoid
+very small communities, with the smallest community containing seven artists in the first
+period and 18 in the second. These values of (k) should be read as analytically useful
+partitions rather than unique or definitive community structures.
+
+                                                                                                            33
+Table 4A. Selected Louvain solution by period.
+
+                                  Selected Selected                      Communities
+                                                                                     <5
+Period                            k             Q Community sizes                      0
+Formation and national
+consolidation                     7 0.694 47, 37, 34, 26, 21, 19, 7                    0
+Boom and international expansion
+                                  8 0.576 134, 105, 78, 74, 66, 58, 18,
+                                                    12
+
+Table 4B. Selected Leiden solution by period.
+
+                                  Selected Selected                      Communities
+                                                                                     <5
+Period                            k             Q Community sizes                      0
+Formation and national
+consolidation                     7 0.694 46, 37, 29, 26, 25, 21, 7                    0
+Boom and international expansion
+                                  8 0.582 129, 117, 80, 68, 59, 49, 25,
+                                                    18
+
+All subsequent community descriptions use the selected Leiden solution. Community
+numbers are ordered by community size within each period and should not be interpreted as
+equivalent categories across periods.
+
+5.2.2 Structural Characterisation of Selected Leiden Communities
+
+The network visualisations below show the selected Leiden partitions. Node colour identifies
+community membership, node size represents degree, node shape distinguishes Chilean from
+foreign artists, and edge width represents ordinal collaboration intensity. The figures should
+be read as descriptive visualisations of meso-level structure rather than as evidence of the
+substantive meaning of each community.
+
+                                                                         34
+Figure 6A. Leiden communities during the formation and national consolidation period.
+                                                                                                            35
+Figure 6B. Leiden communities during the boom and international expansion period.
+The visual comparison suggests that network expansion did not eliminate internal
+differentiation. In the Formation and National Consolidation period, communities appear as
+smaller, more visually distinct clusters. In the Boom and International Expansion period,
+communities are embedded within a larger and more integrated connected structure. Thus,
+the boom period combines two processes: increasing structural integration and persistent
+meso-level differentiation. The following tables provide a compact compositional reading of
+these partitions, showing how communities differ in size, collaboration intensity,
+generational profile, country composition, record-label position, and gender composition.
+
+5.2.3 Community Composition
+
+Tables 5A and 5B characterise the selected Leiden communities separately for each period.
+The tables combine community size, collaboration intensity, generational profile, foreign-
+
+                                                                                                            36
+artist presence, female or mixed-band participation, and the dominant record-label status.
+Mean ordinal strength is retained as the main indicator of collaboration intensity because it
+captures repeated collaboration while reducing the influence of extreme dyads.
+
+Table 5A. Selected Leiden communities during Formation and National Consolidation.
+
+Com
+
+m.   Nodes  Ord. str.  Dom. gen.  Mean year   Foreign %  Fem./mixed %  Main label
+                  3.8  2015-2019        2014  11%        4%            Independent
+C1   46           5.7  1990s            2000  14%        27%           Independent
+                  4.8  2015-2019        2015  31%        14%           Independent
+C2   37           9.2  2015-2019        2015  12%        4%            Independent
+                  5.4  2015-2019        2013  33%        0%            Independent
+C3   29           3.1  1990s            2002  19%        10%           No label
+                  2.0  2015-2019        2015  43%        0%            No label
+C4   26
+
+C5   25
+
+C6   21
+
+C7   7
+
+The first-period solution is especially useful for interpreting the generational and stylistic
+boundary between rap and urbano in Chile when read alongside the historical literature.
+Communities 2 and 6 can be read together as two closely related clusters of historical Chilean
+
+rap. Compared with the other first-period communities, both are marked by older
+generational profiles: in each case, the dominant cohort corresponds to artists whose
+trajectories began in the 1990s, whereas most other communities are dominated by artists
+emerging between 2015 and 2019. This contrast is important because rap and Música Urbana
+do not fully overlap as emic categories in the Chilean context. Although rap is included
+analytically within the broader delimitation of Música Urbana used in this dissertation, many
+artists, audiences, and scenes distinguish rap­especially boom-bap-oriented rap­from what
+is more commonly recognised as urbano. The community structure reflects this distinction:
+older rap clusters remain visible within the collaboration network, but they are differentiated
+from younger clusters associated with trap, reggaeton, mambo, and other contemporary urban
+sounds.
+
+The comparison between Communities 2 and 6 also reveals internal variation within this
+historical rap segment. Community 2 displays higher collaboration intensity and a larger
+presence of female or mixed-band artists. This pattern is partly associated with Ana Tijoux,
+whose position in the community connects historical rap to collaborations involving women
+artists, including some foreign artists and artists located outside the core of Música Urbana.
+Community 6, by contrast, is more strongly concentrated around male rap trajectories and
+
+                                                                                    37
+shows no presence of major-label affiliation, whereas Community 2 includes a small but
+visible major-label component. These differences do not imply a sharp separation between
+the two clusters, but they help identify variation within the historical rap segment of the first-
+period network.
+
+The remaining first-period communities are more closely associated with the generational
+formation of urbano as a recognisable category. Community 1 brings together artists linked
+to early trap and reggaeton trajectories, including Marlon Breeze, Polimá Westcoast, Harry
+Nach, Tommy Boysen, and Ceaese. Community 4 stands out for its high mean ordinal
+strength, suggesting a more recurrent collaboration pattern around artists associated with
+reggaeton and mambo-oriented circuits. Community 5, centred on Pablo Chill-E and Julianno
+Sosa, combines a younger generational profile with a comparatively larger share of foreign
+collaborators, pointing to the early articulation of Chilean trap with transnational
+collaboration circuits. Community 3 and the smaller Community 7 should be interpreted
+more cautiously, but both reinforce the broader pattern: the first-period network is organised
+by generational and sonic differences rather than by a single homogeneous urban scene.
+
+Taken together, these patterns suggest that the distinction between rap and urbano is not only
+stylistic but also generational and relational. The emergence of urbano in Chile involved
+consolidating new sounds and collaborative formations that were partly connected to, but
+also differentiated from, earlier rap trajectories. Community detection therefore provides
+empirical support for analysing Música Urbana as a heterogeneous relational category that
+gathers multiple musical lineages while preserving internal differences among the artists,
+sounds, generations, and collaboration circuits that compose it.
+
+Table 5B. Selected Leiden communities during Boom and International Expansion.
+
+Com
+
+m.   Nodes  Ord. str.  Dom. gen.  Mean year   Foreign %  Fem./mixed %  Main label
+                  8.5  2020-2024        2016  62%        5%            Independent
+C1   129        10.2   2020-2024        2018  21%        8%            No label
+                  7.4  2020-2024        2015  38%        12%           No label
+C2   117          7.6  2015-2019        2013  15%        29%           No label
+                  6.7  1990s            2005  27%        14%           Independent
+C3   80           3.5  2020-2024        2018  90%        12%           No label
+                  5.8  2015-2019        2015  4%         4%            No label
+C4   68           4.5  2005-2009        2008  61%        22%           Independent
+
+C5   59
+
+C6   49
+
+C7   25
+
+C8   18
+
+                                                                                    38
+The second-period solution shows a rearticulation of the collaboration space rather than a
+simple enlargement of the first-period communities. Community labels are period-specific,
+and therefore Community 1 in the second period should not be read as the continuation of
+Community 1 in the first. Instead, a redistribution of artists becomes visible into a larger and
+more internally differentiated network. The two largest communities are Community 1, with
+129 artists, and Community 2, with 117 artists. Community 1 is strongly internationalised,
+with 62.0% foreign artists and the highest share of major-label affiliation in the period. It
+includes Chilean figures such as Julianno Sosa, ITHAN NY, El Jordan 23, Pablo Chill-E,
+Polimá Westcoast, Ak4:20, and Pailita, together with foreign collaborators such as Fuego,
+JC Reyes, Brray, De La Ghetto, Bad Gyal, KHEA, Dani Flow, El Bogueto, Yung Beef, and
+Justin Quiles. Community 2, by contrast, is more strongly Chilean and displays the highest
+mean ordinal strength, suggesting a large local cluster with particularly recurrent
+collaboration ties around artists such as El BAI, Balbi El Chamako, Marcianeke, Jere Klein,
+Tunechikidd, Simon la Letra, and Yiordano Ignacio.
+
+The rap-oriented segment remains distinguishable in the second period, especially in
+Communities 5 and 8. Community 5 brings together several artists from older rap trajectories,
+including Portavoz, Movimiento Original, Chystemc, Stailok, Ana Tijoux, Semillah Skillz,
+and Aerstame. Its mean inception year is earlier than that of most other communities, and its
+dominant generation corresponds to the 1990s. Community 8 is smaller and somewhat later,
+with a dominant generation of 2005-2009 and artists such as Mamborap, Donexprs, Audio
+Directo, Doze Ermitaño, and Flor De Rap. This distinction suggests internal differentiation
+within the rap segment itself: Community 5 is larger and more anchored in historical rap
+figures, whereas Community 8 appears as a smaller rap cluster with a later generational
+profile and a comparatively higher share of foreign artists.
+
+The remaining communities are more closely associated with younger urbano trajectories.
+Communities 1, 2, 3, and 6 are dominated by artists whose trajectories began between 2020
+and 2024, while Communities 4 and 7 are dominated by the 2015-2019 cohort. Community
+4 is notable for the largest presence of female or mixed-band artists in the period, including
+Vlntna B, KYA, Shirel, AKRIILA, Cami, SOULFIA, and others, and it also includes a visible
+major-label component. Community 7 is smaller, almost entirely Chilean, and has no major-
+
+                                                                                                            39
+label presence, which is consistent with reading it as a more local or alternative urbano
+cluster. Community 6 forms a second internationalised nucleus: it is smaller than Community
+1 but has the highest foreign share in the period. It is organised around artists such as Lolo
+OG, Lauty Gram, Martinwhite, Omar Varela, Salastkbron, DJ Tao, and Marka Akme, and its
+links to Chilean artists are especially visible through Martinwhite, Sayian Jimmy, Jairo Vera,
+Gino Mella, Marcianeke, El Joan, Ak4:20, and Standly. This pattern suggests a more specific
+connection with Latin American urban circuits, especially Argentine and related
+transnational scenes, rather than the broader international circulation observed in Community
+1.
+
+5.2.4 Historical and Theoretical Interpretation
+
+The Leiden results show that community structure is differentiated by size, collaboration
+intensity, nationality, generation, and organisational position. These patterns do not explain
+the historical meaning of each community on their own, but they provide a relational map
+that can be read in dialogue with the historical and ethnographic reconstruction developed
+earlier in the dissertation and in previous work on Chilean Música Urbana (Muñoz-Tapia et
+al., 2025; Muñoz-Tapia and Pinochet-Cobos, 2025). In this sense, community detection helps
+assess whether the category's historical formation leaves observable traces in Spotify-visible
+collaboration networks.
+
+The communities should therefore not be interpreted as bounded genres. They combine artists
+with different profiles, suggesting that collaboration clusters are formed through the
+articulation of stylistic, generational, industrial, and transnational relations. This is consistent
+with relational and assemblage approaches to genre, which understand musical categories as
+historically situated configurations of sounds, actors, institutions, media, and classificatory
+practices rather than fixed stylistic containers (Brackett, 2016; Drott, 2013). It also connects
+with White's and Crossley's arguments that categories and networks are mutually implicated:
+categories orient recognition and affiliation, while relations help stabilize categories as
+socially effective formations (Crossley, 2025a; White, 2008).
+
+The comparison between periods clarifies this point. In the Formation and National
+Consolidation period, the network is organised around a visible generational and stylistic
+
+                                                                                                            40
+boundary between historical rap and younger urbano-oriented formations. This pattern
+resonates with previous research showing that the emergence of Música Urbana in Chile
+involved a contested process of categorisation structured by the split between rap and trap,
+the development of reggaeton, and the production of generational subjectivities (Muñoz-
+Tapia and Pinochet-Cobos, 2025). The first-period communities make this boundary
+observable at the relational level: rap-oriented clusters are associated with older cohorts and
+boom-bap trajectories, while trap, reggaeton, and mambo-oriented clusters are dominated by
+younger artists.
+
+In the Boom and International Expansion period, this distinction does not disappear, but it is
+reorganised within a larger and more heterogeneous collaboration network. Rap remains
+identifiable through specific communities, while larger urbano-oriented clusters are
+dominated by artists emerging between 2015 and 2024. At the same time, internationalisation
+appears as a selective process rather than a uniform opening of the network. One nucleus is
+broader and more industry-visible, combining Chilean artists with collaborators from
+multiple international scenes; another is smaller and more specifically connected to Latin
+American urbano circuits. This suggests that the expansion of Música Urbana involved both
+the persistence of internal generational boundaries and the formation of regional
+collaborative horizons.
+
+Taken together, the two periods show that Música Urbana operates as a glocal hypergenre in
+a relational sense (Buch, 2013, 2018; Muñoz-Tapia et al., 2025). It gathers heterogeneous
+musical lineages without erasing their internal differences. Historical rap, trap, reggaeton,
+mambo, and other urbano sounds become part of the same analytical network, yet they
+remain differentiated by generation, sonic orientation, collaboration intensity, country
+composition, and organisational position. Community detection therefore extends previous
+historical and ethnographic research by showing how categorical tensions are also enacted
+through collaboration among artists on songs. The next section turns from identifying clusters
+to modelling whether selected endogenous processes and artist attributes help account for the
+formation of collaboration ties across the two periods.
+
+                                                                                                            41
+5.3 ERGM
+
+5.3.1 Binary ERGM Strategy
+
+The final modelling stage uses binary Exponential Random Graph Models (ERGMs) to
+examine which mechanisms are associated with the presence of collaboration ties in the
+Spotify-visible networks. The dependent network is defined as:
+
+0 = no observed collaboration
+1 = at least one observed collaboration
+
+In this analysis, the dependent variable is therefore a binary artist-by-artist collaboration
+network estimated separately for each period. A tie takes the value 1 when two artists share
+at least one credited track collaboration within the period, and 0 otherwise. This specification
+asks a conservative question: given the set of artists retained in each period, which
+endogenous and attribute-based mechanisms are associated with whether two artists
+collaborate at least once?
+
+Weighted collaboration remains central to the descriptive and community analyses, where tie
+intensity is analysed directly. For the ERGM stage, however, the binary specification was
+retained because it provided a more stable and comparable strategy across the two periods
+than the valued alternatives explored during modelling. The models are estimated separately
+for the Formation and National Consolidation period and the Boom and International
+Expansion period, following the standard ERGM logic of modelling the observed network
+as one realisation from a distribution of possible networks (Koskinen and Snijders, 2012;
+Krivitsky, 2012).
+
+The binary ERGM estimates the probability of observing a collaboration network Y as a
+function of selected structural and attribute-based statistics:
+
+P(Y = y) = [1 / ()] exp {  g(y) }
+where y is the observed collaboration network, g(y) is a vector of network statistics,  is a
+vector of model parameters, and () is the normalising constant. In this dissertation, the
+model assesses whether collaboration ties are associated with generational proximity, Chile­
+foreign ties, categorical similarity, and endogenous network structure.
+
+                                                                                                            42
+5.3.2 Model Specification
+
+The model sequence is progressive and intentionally parsimonious. M1 establishes a baseline
+for tie formation after accounting for the network's structural design constraints. M2 adds the
+two mechanisms most directly connected to the dissertation argument: generational
+proximity and Chile-Foreign collaboration. M3 incorporates categorical homophily by
+gender and artist type. M4 adds degree(1), an endogenous term that accounts for the large
+number of artists with only one observed collaboration partner.
+
+Two structural offsets are included throughout the sequence and are not interpreted
+substantively. First, degree(0) is offset because the final analytic networks contain no isolates.
+Second, foreign-foreign dyads are offset because foreign or non-core artists enter the data
+only through ties to the Chilean Música Urbana core. The Chile-Foreign term therefore
+compares Chile-Foreign ties with Chile-Chile ties within the eligible dyad space, rather than
+modelling all possible international collaborations.
+
+Table 6. Binary ERGM sequence evaluated for the dissertation.
+
+Model            Specification        Purpose
+M1: Baseline     edges + offsets      Baseline model for tie formation after
+                                      accounting for structural design constraints.
+M2: Generation   M1 + year            Adds generational proximity and the distinction
++ transnational  difference + Chile-  between Chile-Chile and Chile-Foreign ties.
+tie              Foreign tie
+                                      Adds categorical similarity among artists.
+M3: Attribute    M2 + same gender
+homophily        + same artist type   Selected model; adds endogenous structure
+                                      associated with low-degree participation.
+M4: Low-degree   M3 + degree(1)
+participation
+
+5.3.3 Progressive Model Comparison
+
+Tables 7A and 7B compare the same four models in each period. Coefficients are shown with
+standard errors below them; AIC, BIC, and log likelihood are reported at the bottom of each
+table. The sequence is not designed to maximise fit separately for each period, but to evaluate
+whether successive blocks of theoretically motivated terms improve a comparable
+specification across the two networks. The purpose is therefore not to identify the most
+
+                                                               43
+complex possible model, but to retain a stable specification that can be interpreted alongside
+the descriptive and community results.
+
+Table 7A. Binary ERGM results for formation and national consolidation.
+
+Term         M1:       M2: Generation +   M3: Attribute  M4: Low-degree
+Edges        Baseline  transnational tie  homophily      participation
+             -3.96***  -2.98***           -4.16***       -3.20***
+Degree(1)    (0.05)    (0.07)             (0.24)         (0.20)
+                                                         2.96***
+Year                   -0.11***           -0.11***       (0.24)
+difference                                               -0.09***
+                       (0.01)             (0.01)
+Chile-                 -1.00***           -1.02***       (0.01)
+Foreign tie                                              -0.46***
+                       (0.16)             (0.16)
+Same gender                               0.73***        (0.13)
+                                          (0.18)         0.38**
+Same artist                               0.61***        (0.14)
+type                                                     0.32*
+                                          (0.16)
+AIC          4033.08   3824.88            3799.84        (0.14)
+BIC          4041.10   3848.96            3839.96        3648.90
+Log          -2015.54  -1909.44           -1894.92       3697.05
+Likelihood                                               -1818.45
+
+Table 7B. Binary ERGM results for boom and international expansion.
+
+Term         M1:       M2: Generation +   M3: Attribute  M4: Low-degree
+Edges        Baseline  transnational tie  homophily      participation
+             -4.39***  -3.34***           -4.75***       -4.30***
+Degree(1)    (0.03)    (0.04)             (0.13)         (0.11)
+                                                         2.84***
+Year                   -0.09***           -0.08***       (0.19)
+difference                                               -0.07***
+                       (0.01)             (0.01)
+Chile-                 -1.64***           -1.68***       (0.00)
+Foreign tie                                              -1.00***
+                       (0.07)             (0.07)
+Same gender                               0.98***        (0.07)
+                                          (0.09)         0.76***
+Same artist                               0.62***        (0.08)
+type                                                     0.42***
+
+                                                                         44
+            M1:  M2: Generation +       M3: Attribute  M4: Low-degree
+                                        homophily      participation
+Term        Baseline transnational tie  (0.10)         (0.08)
+                                        15808.74       15556.52
+AIC         17005.20 15991.75           15858.61       15616.37
+            17015.18 16021.67           -7899.37       -7772.26
+BIC         -8501.60 -7992.87
+Log
+Likelihood
+
+The comparison supports M4 as the principal specification. Adding generational proximity
+and Chile-Foreign ties improves fit relative to the baseline; adding categorical homophily
+further improves fit; and adding degree(1) improves AIC, BIC, and log likelihood in both
+periods. The signs of the main effects are consistent across periods: year difference and Chile-
+Foreign ties are negative, while same gender, same artist type, and degree(1) are positive. The
+more negative Chile-Foreign coefficient in the boom period suggests that the increased
+presence of foreign artists did not make cross-national collaboration generalised across the
+eligible dyad space. For this reason, M4 is retained as the main comparative ERGM, while
+M1-M3 are interpreted as progressive comparison models.
+
+5.3.4 Selected Model Diagnostics
+
+M4 is selected because it is estimated successfully in both periods, improves fit over M3, and
+provides the same interpretable specification for the two networks. This comparability is
+important because the objective is to evaluate whether similar mechanisms organise
+collaboration across periods, rather than to maximise fit separately for each network. GOF
+and MCMC diagnostics are therefore reported only for M4.
+
+                                                                       45
+Figure 8. Coefficient estimates and 95% confidence intervals for M4 by period. The edges
+term is omitted for readability.
+
+                                                                                                            46
+Figure 9A. GOF diagnostics for M4 in the formation and national consolidation period.
+Black line/points represent the observed network; grey line and band represent simulated
+networks.
+
+                                                                                                            47
+Figure 9B. GOF diagnostics for M4 in the boom and international expansion period. Black
+line/points represent the observed network; grey line and band represent simulated
+networks.
+
+                                                                                                            48
+Figure 10A. MCMC diagnostics for M4 in the formation and national consolidation period.
+                                                                                                            49
+Figure 10B. MCMC diagnostics for M4 in the boom and international expansion period.
+The GOF diagnostics suggest that M4 provides a reasonable approximation of broad
+connectivity patterns in both networks, especially geodesic distances and the degree
+distribution after incorporating degree(1). The main limitation concerns edgewise shared
+partners: in both periods, the observed networks contain more dyads with multiple shared
+partners than the simulated networks. M4 therefore underestimates shared-neighbourhood
+structure. The MCMC diagnostics do not show obvious explosive drift, supporting the use of
+M4 as a cautious comparative model, but the GOF results indicate that local closure should
+not be interpreted through this model alone. This is why closure is interpreted jointly through
+weighted transitivity, community detection, and the ERGM sensitivity checks.
+
+5.3.5 Closure Sensitivity Checks
+
+Because of this limitation, we estimated additional GWDSP specifications as sensitivity
+checks. These models are not treated as part of the main progressive sequence. In the
+formation period, one GWDSP specification slightly improved AIC but did not improve BIC
+
+                                                                                                            50
+relative to M4. In the boom period, analogous specifications were computationally unstable
+and did not provide a comparable alternative.
+
+GWDSP is therefore retained only as a sensitivity check. This decision is methodological
+rather than substantive: it should not be interpreted as evidence that closure is absent from
+the collaboration network. Local cohesion is interpreted primarily through weighted
+transitivity and community detection, while the ERGM is used to evaluate more stable
+mechanisms of tie formation.
+
+5.3.6 Substantive Interpretation
+
+Because the models are estimated on separate networks, coefficient comparisons across
+periods are interpreted cautiously, focusing on direction, consistency, and broad relative
+change. The negative edges coefficient in both periods reflects network sparsity: most
+eligible dyads do not collaborate. Its more negative value during the boom should not be read
+as a decline in collaboration, but as a consequence of the expansion of the dyadic opportunity
+structure.
+
+Generational proximity is consistently associated with collaboration. Artists whose
+trajectories began closer in time are more likely to collaborate, and this association remains
+after adding categorical homophily and low-degree structure. The coefficient is slightly less
+negative in the boom period, consistent with a larger network in which more cohorts coexist,
+but the effect remains important. This supports the historical interpretation of Chilean Música
+Urbana as a field marked by generational differentiation.
+
+Chile-Foreign ties are negative in both periods, with a stronger negative coefficient during
+the boom. This does not contradict the descriptive and community results showing increased
+internationalisation. Rather, it indicates that cross-national ties remain less likely than Chile-
+Chile ties within the eligible dyad space. Internationalisation therefore appears as a selective
+expansion concentrated in particular sectors of the network, rather than as a generalised
+weakening of national structuring. Community detection identifies where internationalised
+collaboration is concentrated, while the ERGM shows that this pattern does not amount to
+generalised cross-national mixing across all eligible dyads.
+
+                                                                                                            51
+degree(1) is positive and strong in both periods, indicating that artists with only one observed
+collaboration partner are not residual cases but part of the network structure. This is
+consistent with the descriptive results: the boom expands the network substantially, but many
+artists still enter the Spotify-visible collaboration structure through a single observed partner.
+Expansion therefore reproduces peripheral modes of participation at a larger scale.
+
+Same-gender collaboration is positive in both periods and stronger in the boom model, but
+this result should be interpreted in relation to the strongly masculinised composition of the
+network. Since male solo artists constitute the large majority of nodes, same-gender
+collaboration partly reflects the field's demographic structure rather than gender operating as
+the principal axis of community formation. At the same time, gender is not irrelevant: the
+community analysis suggests that the visibility of women and mixed-gender collaboration
+depends heavily on specific figures and localised configurations, such as the community
+around Ana Tijoux.
+
+Same-artist-type collaboration is also positive in both periods but remains a secondary effect.
+The result is consistent with a collaboration field centred mainly on individual artists, while
+groups and collectives occupy more specific positions. Finally, the remaining misfit for
+edgewise shared partners suggests that local cohesive formations should not be reduced to a
+single ERGM closure mechanism. The ERGM therefore complements the descriptive and
+community analyses by identifying robust associations with tie formation while preserving a
+cautious interpretation of local clustering.
+
+6. Discussion and Conclusion
+
+This dissertation has examined Chilean Música Urbana not simply as a genre label, but as a
+historically situated category whose social effectiveness can be observed through patterns of
+collaboration. The findings support a relational interpretation of musical categorisation:
+categories do not merely describe pre-existing artistic worlds; they also orient recognition,
+affiliation, and interaction. In this sense, the analysis extends the argument that categories
+and networks are mutually constitutive (Crossley, 2025a; White, 2008). Música Urbana
+
+                                                                                                            52
+appears not only as a classificatory device, but as a relational formation through which artists,
+scenes, and trajectories become connected.
+
+A central contribution of the study is methodological and interpretive. The network analysis
+does not replace historical interpretation; rather, it triangulates and extends it. Muñoz-Tapia
+and Pinochet-Cobos (2025) show that the emergence of Música Urbana in Chile involved
+transformations in rap, digital self-production, platform visibility, and generational
+understandings of what counted as urbano. That historical account is crucial because it gives
+specific meaning to the generational divide observed in the network. The distinction between
+older rap trajectories and newer urbano clusters is not simply an age difference or a statistical
+partition; it corresponds to a locally situated process through which artists, audiences, and
+scenes came to distinguish rap, trap, reggaeton, and other urban sounds. The present analysis
+extends that account by showing that this categorical and generational divide is also
+organised through collaboration ties. In this sense, the relationship between categories and
+networks is retroactive: categories orient recognition and affiliation, while repeated
+collaborations help reinforce and stabilise those categories. The main contribution, then, lies
+in showing how Chilean Música Urbana became relationally organised between formation
+and national consolidation and boom and international expansion: it expanded, became more
+structurally integrated, and developed through selective internationalisation.
+
+In that sense, this dissertation articulates two analytical emphases that often appear
+disconnected: musical genre and art worlds. Genre foregrounds classification, categorisation,
+recognition, and symbolic struggle, while art worlds highlight the cooperative chains and
+relational infrastructures that make artistic production possible. The Chilean case shows that
+these dimensions are not separate: the genre label becomes meaningful through the relations
+that enact it, while those relations are oriented by shared categories (Crossley, 2025a; White,
+2008). Methodologically, a more quantitative Social Network Analysis can be combined with
+qualitative strategies such as interviews and participant observation because each captures a
+different dimension of the same cultural process. Historical and ethnographic work clarifies
+the category's meanings, while network analysis shows how those meanings become
+relationally stabilised through collaboration (Muñoz-Tapia and Pinochet-Cobos, 2025).
+
+                                                                                                            53
+This approach is important for cultural network analysis because Spotify collaboration data
+are not treated as a transparent representation of a scene. Instead, they serve as an empirical
+trace of a broader process of categorisation, circulation, and artistic coordination. The
+analysis combines platform data with historical and interpretive knowledge of the Chilean
+case, in line with approaches that understand musical categories as historically situated
+assemblages rather than fixed stylistic containers (Brackett, 2016; Drott, 2013). Social
+Network Analysis therefore makes visible one dimension of the relations through which
+categories acquire social force, while accounting for interpretation of the historical and
+cultural context.
+
+One of the clearest empirical findings concerns internationalisation. Compared with the
+formation and national consolidation period, the boom and international expansion period
+includes a larger share of foreign artists, and the community analysis identifies clusters with
+stronger international presence. At first glance, this could suggest a general
+transnationalisation of Chilean Música Urbana. The ERGM results complicate that
+interpretation. Chile-Foreign ties remain less likely than Chile-Chile ties, and this negative
+association is stronger during the second period. Internationalisation should therefore not be
+understood as a homogeneous opening of the entire collaboration network. Rather, it appears
+as a selective process concentrated in particular relational sectors. Foreign artists become
+more visible and more numerous, but cross-national collaboration does not become a
+generalised pattern across the eligible dyad space.
+
+This result speaks to broader debates on streaming and global music circulation.
+Hesmondhalgh (2025) argues that streaming has produced more multipolar patterns of
+musical visibility while preserving unequal structures of platform ownership, infrastructural
+control, and market power. Chilean Música Urbana fits this ambivalent landscape. The boom
+period allowed local artists to connect with broader Latin American circuits, but this
+expansion remained selective and uneven. The findings therefore nuance celebratory
+accounts of platform globalisation: streaming may increase transnational visibility, but it
+does not automatically produce evenly distributed transnational collaboration.
+
+Network expansion also did not produce symmetric integration. Between the two periods,
+the network shows a sharp increase in nodes, edges, and total collaborations, and the largest
+
+                                                                                                            54
+component contains a greater share of the network. In this sense, the collaboration network
+became more structurally integrated. Yet this integration coexists with persistent inequality
+in participation. In terms of collaboration opportunities, expansion increased the number of
+possible positions in the network without distributing access to collaboration evenly across
+artists. Most artists continue to have few collaborators, and the ERGM shows a strong
+positive degree(1) effect in both periods. The second period therefore did not eliminate
+peripheral participation; it reproduced it at a larger scale.
+
+This pattern is especially relevant in the context of the featuring economy and platform
+visibility. Collaboration can function as a mechanism of circulation, exposure, and
+legitimacy, but a single collaboration does not necessarily imply stable integration into a
+collaborative world. The network grows through both one-off ties and recurrent partnerships,
+producing a structure that is simultaneously larger, more integrated, and highly
+heterogeneous. The transition between periods should therefore be understood not only as
+growth, but also as uneven relational incorporation.
+
+Gender appears as a secondary but important dimension of the analysis. The descriptive
+results show that the network is strongly masculinised in both periods. The ERGM identifies
+a positive same-gender effect, particularly during the boom, but this coefficient must be
+interpreted cautiously because male solo artists constitute the overwhelming majority of
+nodes. Gender homophily partly reflects the field's demographic structure. The community
+analysis further suggests that gender does not organise the main divisions of the network,
+which are more clearly differentiated by generation, musical trajectory, country composition,
+and international orientation. However, gender is not irrelevant. The visibility of women and
+mixed-gender collaboration appears to depend heavily on specific figures and localised
+configurations. The community around Ana Tijoux is especially important in this respect,
+since it connects historical rap trajectories with women artists, foreign artists, and artists
+located partly outside the core of Música Urbana. Gender therefore operates less as a global
+organising principle than as an uneven and localised dimension of collaboration.
+
+The study also has methodological implications for analysing cultural categories through
+networks. Descriptive measures show expansion and integration, community detection
+identifies meso-level clusters, and the ERGM evaluates mechanisms associated with tie
+
+                                                                                                            55
+formation. No single method captures the full process. This is especially clear for local
+cohesion: weighted transitivity and community detection indicate cohesive local formations,
+while the ERGM does not fully reproduce edgewise shared partners. Collaboration clusters
+therefore require both formal modelling and historical-cultural interpretation.
+
+The approach also clarifies the limits of Spotify-visible data. The dataset captures
+collaborations that are visible on the platform, not the entire set of musical, social, and
+organisational relations that constitute the scene. It therefore offers a partial but analytically
+useful trace of collaboration. By combining these data with historical knowledge and
+manually validated artist attributes, the dissertation avoids treating platform data as self-
+sufficient evidence.
+
+Taken together, the findings show that the formation, consolidation, and boom of Chilean
+Música Urbana cannot be understood only as a story of stylistic change, platform visibility,
+or international success. It is also a process of relational transformation. The category gathers
+heterogeneous musical trajectories, but it does not erase their internal differences.
+Generational boundaries, selective internationalisation, uneven participation, and localised
+gender visibility all remain visible within the collaboration network. The dissertation
+therefore contributes to a cultural-relational understanding of musical categories: categories
+acquire social force not only through discourse, markets, or platforms, but through the
+patterned relations that connect artists and make a musical world observable across time.
+
+6.1 Methodological Limitations
+
+The networks analysed in this dissertation represent collaborations that are visible in Spotify
+metadata, not the complete universe of musical relations. They capture credited co-
+participation on released tracks but exclude informal creative exchanges, uncredited
+production and songwriting, live performance, friendship, management, and other relations
+that may shape collaboration. The network boundary is therefore substantive and platform-
+specific rather than a census of all artists or interactions in Chilean music.
+
+The sharp increase between periods should also be interpreted as a combination of scene
+expansion and changing platform visibility. More artists may have entered the field, but
+digital distribution, access to Spotify profiles, metadata coverage, and formal crediting
+
+                                                                                                            56
+practices also expanded. The later network consequently documents the growth of the
+Spotify-visible collaboration field rather than providing a direct estimate of growth in the
+underlying population of musicians.
+
+Artist classification combines Spotify genre metadata with manual validation. This improves
+the situated validity of the Música Urbana category, but it also introduces interpretive
+decisions that cannot be reduced to a platform label. The relational boundary mitigates this
+issue by requiring external artists to connect directly to the selected Chilean Música Urbana
+network, and the audit confirms that every final edge satisfies this rule.
+
+7. Abbreviations
+
+    · API: Application Programming Interface
+    · DSP: Digital Service Provider
+    · ERGM: Exponential Random Graph Model
+    · GOF: Goodness of Fit
+    · MCMC: Markov Chain Monte Carlo
+    · SNA: Social Network Analysis
+
+8. Statements and Declarations
+
+8.1 Ethical Considerations
+
+The network analysis uses publicly available and platform-derived metadata about artists and
+released tracks. It does not involve interviews, experiments, private communications, or
+direct interaction with human participants as part of the dissertation's network analysis. The
+analysis reports aggregate patterns and uses artist names only where they are already public
+and analytically necessary for interpreting collaboration networks.
+
+8.2 Declaration of Conflicting Interests
+
+The author declares no potential conflicts of interest with respect to the research, authorship,
+or publication of this dissertation.
+
+                                                                                                            57
+9. References
+
+Albornoz L (2011) La industria de la música: Un escenario en plena transformación. In:
+Bustamante E (ed.) Las Industrias Culturales Audiovisuales e Internet: Experiencias,
+Escenarios de Futuro y Potencialidades Desde La Periferia. IDECO.
+
+Arias Salvado M (2025) "Jesucristo convirtió el agua en vino, yo el reggaetón en indie": El
+reggaetón en el entramado metagenérico de la música urbana española. Resonancias
+29(57).
+
+Bagley M, Gifford E and McKelvey M (2022) The evolution of niche: Variety in
+knowledge networks in the global music industry. Industry and Innovation 29(3): 425­462.
+
+Bakhtin M (1981) The Dialogic Imagination: Four Essays (ed. M Holquist; trans. C
+Emerson and M Holquist). Austin: University of Texas Press.
+
+Becker HS (2008) Los Mundos Del Arte: Sociologia Del Trabajo Artistico. Universidad
+Nacional de Quilmes.
+
+Born G (2000) Music and the representation/articulation of sociocultural identities and
+techniques of the musical imaginary. In: Born G and Hesmondhalgh D (eds.) Western
+Music and Its Others: Difference, Representation, and Appropriation in Music. Berkeley;
+Los Angeles: University of California Press, pp. 31­47.
+
+Born G (2011) Music and the materialization of identities. Journal of Material Culture
+16(4): 376­388.
+
+Brackett D (2016) Categorizing Sound: Genre and Twentieth-Century Popular Music.
+University of California Press.
+
+Braden LEA, Park JH and Lee J-S (2024) Symbolic association networks: A case study of
+orchestral programming's effect on the reputation of composers. Social Networks 79: 198­
+208.
+
+Buch E (2013) Le duo de la musique savante et la musique populaire: Genres, hypergenres
+et sens commun. In: Pedler E and Cheyronnaud J (eds.) Théories Ordinaires. Éditions de
+l'EHESS.
+
+Buch E (2018) La musique classique est-elle un genre? Quelques remarques sur les
+pratiques de catégorisation à l'ère numérique. In: Dorin S (ed.) Déchiffrer Les Publics de
+La Musique Classique: Perspectives Comparatives, Historiques Et Sociologiques. Éditions
+des Archives Contemporaines.
+
+Buquet G (2003) Música on line: Batallas por los derechos, lucha por el poder. In:
+Bustamante E (ed.) Hacia Un Nuevo Sistema Mundial de Comunicación: Las Industrias
+Culturales En La Era Digital. Gedisa.
+
+Crossley N (2009) The man whose web expanded: Network dynamics in manchester's
+post/punk music scene 1976­1980. Poetics 37(1): 24­49.
+
+                                                                                                            58
+Crossley N (2015) Networks of Sound, Style and Subversion. Manchester University Press.
+
+Crossley N (2020) Connecting Sounds: The Social Life of Music. Manchester University
+Press.
+
+Crossley N (2025a) Group formation and social structure: On networks and identities. Acta
+Sociologica: 00016993251357717.
+
+Crossley N (2025b) Music worlds and event networks: An exposition. Cultural Sociology
+19(2): 159­180.
+
+Crossley N, McAndrew S and Widdop P (eds.) (2015) Social Networks and Music Worlds.
+Routledge.
+
+Derrida J (1988) Limited Inc. Northwestern University Press.
+
+Deshmane A and Martinez-de-Albeniz V (2020) Come together, right now? An empirical
+study of collaborations in the music industry. IESE Business School Working Paper.
+forthcoming 2020. DOI: 10.2139/ssrn.3743462.
+
+Diani M and Sacchetti S (2023) Embedded performers: The relational foundations of record
+production. Social Networks 74: 206­215.
+
+Domínguez S and Hollstein B (2011) Mixed methods social networks research: An
+introduction. In: Mixed Methods Social Networks Research. Cambridge: Cambridge
+University Press, pp. 3­23.
+
+Drott E (2013) The end(s) of genre. Journal of Music Theory 57(1): 1­45.
+
+Fabbri F (1982) A theory of musical genres: Two applications. In: Horn D and Tagg P
+(eds.) Popular Music Perspectives. Göteborg; London: IASPM, pp. 52­81.
+
+Fabbri F (2012) How genres are born, change, die: Conventions, communities and
+diachronic processes. In: Hawkins S (ed.) Critical Musicological Reflections: Essays in
+Honour of Derek b. Scott. Farnham, England: Ashgate, pp. 179­191.
+
+Farrell MP (2001) Collaborative Circles: Friendship Dynamics and Creative Work.
+University of Chicago Press.
+
+Foucault M (1977) Nietzsche, genealogy, history. In: Bouchard DF (ed.) Language,
+Counter-Memory, Practice: Selected Essays and Interviews. Ithaca, NY: Cornell University
+Press, pp. 139­164.
+
+Fouce H (2012) Entusiastas, enérgicos y conectados en el mundo musical. In: García
+Canclini N, Cruces Villalobos F, and Urteaga Castro-Pozo M (eds.) Jóvenes, Culturas
+Urbanas y Redes Digitales. Ariel, pp. 169­186.
+
+Gallo G and Semán P (2016) Capítulo 1. Gestionar, mezclar, habitar: Claves en los
+emprendimientos musicales contemporáneos. In: Gallo G and Semán P (eds.) Gestionar,
+Mezclar, Habitar: Claves En Los Emprendimientos Musicales Contemporáneos. Gorla.
+
+                                                                                                            59
+Grubesic TH, Helderop E and Kaur B (2024) A deep dive into the collaborative networks
+of yacht rock. Poetics 102: 101872.
+
+Hammou K (2009) Des raps en francais au rap francais: Une analyse structurale de
+l'emergence d'un monde social professionnel. forthcoming 2009. DOI:
+10.4000/HISTOIREMESURE.3889.
+
+Hammou K (2023) La racialisation musicale comme action conjointe. La carrière de la
+catégorie d'Urban Contemporary dans l'industrie musicale états-unienne (1979­1984). In:
+Fontaine M and Pedler E (eds.) L'épreuve Des Frontières Sociales. Paris: Éditions de
+l'EHESS, pp. 65­88.
+
+Hesmondhalgh D (ed.) (2025) Music Streaming Around the World. Oakland, California:
+University of California Press.
+
+Kirschbaum C and Carvalho de Vasconcelos F (2007) Tropicalia: Manobras estrategicas
+em redes de musicos. Revista de Administracao de Empresas 47: 1­17.
+
+Koskinen J and Snijders TAB (2012) Simulation, estimation, and goodness of fit. In:
+Lusher D, Koskinen J, and Robins G (eds.) Exponential Random Graph Models for Social
+Networks: Theory, Methods, and Applications. Cambridge: Cambridge University Press.
+
+Krivitsky PN (2012) Exponential-family random graph models for valued networks.
+Electronic Journal of Statistics 6: 1100­1128.
+
+Lamacchia MC (2016) La música independiente en la era digital. Tesis de Maestría en
+Industrias Culturales. Universidad Nacional de Quilmes, Quilmes.
+
+Leyshon A (2001) Time­space (and digital) compression: Software formats, musical
+networks, and the reorganisation of the music industry. Environment and Planning A:
+Economy and Space 33(1): 49­77.
+
+Makelberge N (2012) Rethinking collaboration in networked music. Organised Sound
+17(1): 28­35.
+
+Makkonen T (2017) North from here: The collaboration networks of finnish metal music
+genre superstars. Creative Industries Journal 10(2): 104­118.
+
+Muñoz-Tapia S and Pinochet-Cobos C (2023) Música urbana a la chilena. Revista Anfibia.
+Available at: https://www.revistaanfibia.cl/musica-urbana-a-la-chilena/.
+
+Muñoz-Tapia S and Pinochet-Cobos C (2025) Géneros musicales y generaciones: La
+conformación controversial de la música urbana chilena. Latin American Music Review
+46(1): 102­131.
+
+Muñoz-Tapia S, Arias Salvado M and Hammou K (2025) Urban music, hurban y música
+urbana: Falsos amigos, afinidades electivas y procesos de categorización de un hipergénero
+glocal. Introducción al dossier "música urbana: Masificación y cambios sociales de un
+campo en disputa". Resonancias 29(57): 13­27.
+
+                                                                                                            60
+Negus K (2019) From creator to data: The post-record music industry and the digital
+conglomerates. Media, Culture & Society 41(3): 367­384.
+Prey R (2016) Musica analytica: The datafication of listening. In: Nowak R and Whelan A
+(eds.) Networked Music Cultures. Palgrave Macmillan UK, pp. 31­48.
+Rivera-Rideau P (2015) Remixing Reggaetón: The Cultural Politics of Race in Puerto Rico.
+Durham: Duke University Press.
+Silva M, Rocha L and Moro MM (2019) Collaboration profiles and their impact on musical
+success. In: Proceedings of the 34th ACM/SIGAPP symposium on applied computing,
+2019, pp. 1­8.
+Small C (1998) Musicking: The Meanings of Performing and Listening. Wesleyan
+University Press.
+Tajfel H and Turner JC (1979) An integrative theory of intergroup conflict. In: Austin WG
+and Worchel S (eds.) The Social Psychology of Intergroup Relations. Monterey, CA:
+Brooks/Cole, pp. 33­47.
+White HC (2008) Identity and Control: How Social Formations Emerge. 2nd ed. Princeton
+University Press.
+Xu X, Lomi A and Stadtfeld C (2025) The dual clustering of tastes and ties: Extending the
+notion of relational similarity in cultural fields. Poetics 110.
+
+                                                                                                            61
+
